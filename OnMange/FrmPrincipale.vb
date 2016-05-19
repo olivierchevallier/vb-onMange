@@ -18,6 +18,9 @@ Public Class FrmPrincipale
             Me.Height += 150
             Me.Width += 100
         Else
+            If (tbcTabController.SelectedTab.Name = "tabNoter") Then
+                AfficherANoter()
+            End If
             Me.Height = FRM_HEIGHT
             Me.Width = FRM_WIDTH
         End If
@@ -171,41 +174,40 @@ Public Class FrmPrincipale
         FrmConsulter.Text = "On Mange ! - Consulter l'historique"
     End Sub
 
+    'Affiche la proposition du jour
     Private Sub AfficherPropositionJour()
         Dim platPropose As Plat = PropositionDuJour()
         lblPropositionPlat.Text = platPropose.GetNomPlat()
         lblPropositionOrigine.Text = platPropose.GetOrigine()
-        lblPropositionPlat.Location = New Point(((pnlMangerProposition.Width - lblPropositionPlat.Width) \ 2), lblPropositionPlat.Location.Y)
-        lblPropositionOrigine.Location = New Point(((pnlMangerProposition.Width - lblPropositionOrigine.Width) \ 2), lblPropositionOrigine.Location.Y)
+        CentrerDans(lblPropositionPlat, pnlMangerProposition)
+        CentrerDans(lblPropositionOrigine, pnlMangerProposition)
         afficherNote(platPropose.GetNoteMoyenne(), starsProposition)
     End Sub
 
+    'Affiche le plat à noter
     Private Sub AfficherANoter()
-        Dim dateChoise As Date
-        Dim moment As String
-        If (optMidi.Checked) Then
-            moment = "m"
-        Else
-            moment = "s"
-        End If
+        Dim dateChoise As Date, moment As String, repasCourant As Repas
+        moment = If(optMidi.Checked, "m", "s")
         dateChoise = datNoterJour.Value
-        recupUnRepas(dateChoise, moment)
-        lblNoterPlat.Text = repasCourant.GetNomPlat
-        lblNoterOrigine.Text = repasCourant.GetOrigine
-        lblNoterPlat.Location = New Point(((pnlNoter.Width - lblNoterPlat.Width) \ 2), lblNoterPlat.Location.Y)
-        lblNoterOrigine.Location = New Point(((pnlNoter.Width - lblNoterOrigine.Width) \ 2), lblNoterOrigine.Location.Y)
+        repasCourant = recupUnRepas(dateChoise, moment)
+        lblNoterPlat.Text = If(IsNothing(repasCourant), "Date invalide", repasCourant.GetNomPlat)
+        lblNoterOrigine.Text = If(IsNothing(repasCourant), "Pas de repas enregistré à ce moment", repasCourant.GetOrigine)
+        cmdEnregistrerNote.Enabled = Not IsNothing(repasCourant)
+        CentrerDans(lblNoterPlat, pnlNoter)
+        CentrerDans(lblNoterOrigine, pnlNoter)
+        afficherNote(If(IsNothing(repasCourant), 0, repasCourant.GetNoteMoyenne()), starsAfficheNoter)
     End Sub
 
     Private Sub datNoterJour_ValueChanged(sender As Object, e As EventArgs) Handles datNoterJour.ValueChanged
-        'AfficherANoter()
-    End Sub
-
-    Private Sub optMidi_CheckedChanged(sender As Object, e As EventArgs) Handles optMidi.CheckedChanged
-        'AfficherANoter()
+        AfficherANoter()
     End Sub
 
     Private Sub optSoir_CheckedChanged(sender As Object, e As EventArgs) Handles optSoir.CheckedChanged
-        'Reste a gérer les dates sans repas...
         AfficherANoter()
+    End Sub
+
+    'Centre un élément dans son conteneur
+    Private Sub CentrerDans(ByRef aCentrer As Control, ByRef dans As Control)
+        aCentrer.Location = New Point(((dans.Width - aCentrer.Width) / 2), aCentrer.Location.Y)
     End Sub
 End Class

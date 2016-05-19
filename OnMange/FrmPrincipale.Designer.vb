@@ -130,6 +130,7 @@ Partial Class FrmPrincipale
         Me.mnuPrincipalStrip = New System.Windows.Forms.MenuStrip()
         Me.mnuAdministration = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuDeconnexion = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VW_UTILISATEURSTableAdapter1 = New OnMange.DataSet1TableAdapters.VW_UTILISATEURSTableAdapter()
         Me.tbcTabController.SuspendLayout()
         Me.tabManger.SuspendLayout()
         CType(Me.picManger, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1350,6 +1351,10 @@ Partial Class FrmPrincipale
         Me.mnuDeconnexion.Size = New System.Drawing.Size(88, 20)
         Me.mnuDeconnexion.Text = "&Déconnexion"
         '
+        'VW_UTILISATEURSTableAdapter1
+        '
+        Me.VW_UTILISATEURSTableAdapter1.ClearBeforeFill = True
+        '
         'FrmPrincipale
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1542,4 +1547,5 @@ Partial Class FrmPrincipale
     Friend WithEvents lblOu As Label
     Friend WithEvents btnPlatExistant As Button
     Friend WithEvents lblPropositionOrigine As Label
+    Friend WithEvents VW_UTILISATEURSTableAdapter1 As DataSet1TableAdapters.VW_UTILISATEURSTableAdapter
 End Class

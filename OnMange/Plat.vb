@@ -30,6 +30,10 @@ Public Class Plat
         Return mangeLe
     End Function
 
+    Public Function getAliments() As List(Of String)
+        Return aliments
+    End Function
+
     Public Function ToStringArray() As String()
         Dim platArray(5) As String
         platArray(0) = nomPlat
