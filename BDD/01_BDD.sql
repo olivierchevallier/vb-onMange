@@ -12,7 +12,7 @@ SPOOL .\Logs\02_CreationUtilisateurs.log
 SPOOL OFF
 
 -- Connexion à HEGLOCAL en tant que OnMange_data (propirétaires des objets de schéma)
-CONNECT OnMange_data/OnMange_data@HEGLOCAL
+CONNECT OnMange_data/OnMange_data
 
 -- Création des tables
 SPOOL .\Logs\03_CreationTables.log
@@ -35,7 +35,7 @@ SPOOL .\Logs\06_CreationTriggers.log
 SPOOL OFF
 
 -- Connexion à HEGLOCAL en tant que system
-CONNECT system/manager@HEGLOCAL
+CONNECT system/manager
 
 -- Création des synonymes
 SPOOL .\Logs\07_Synonymes.log
