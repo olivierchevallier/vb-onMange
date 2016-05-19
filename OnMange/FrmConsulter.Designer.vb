@@ -38,8 +38,6 @@ Partial Class FrmConsulter
         Me.lblPasMange = New System.Windows.Forms.Label()
         Me.cboMangerOrigine = New System.Windows.Forms.ComboBox()
         Me.lblOrigine = New System.Windows.Forms.Label()
-        Me.txtAlimentPrincipal = New System.Windows.Forms.TextBox()
-        Me.lblAliment = New System.Windows.Forms.Label()
         Me.btnChoisir = New System.Windows.Forms.Button()
         CType(Me.picTitre, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvHistorique, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,7 +89,7 @@ Partial Class FrmConsulter
         Me.dgvHistorique.Name = "dgvHistorique"
         Me.dgvHistorique.ReadOnly = True
         Me.dgvHistorique.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvHistorique.Size = New System.Drawing.Size(710, 263)
+        Me.dgvHistorique.Size = New System.Drawing.Size(710, 283)
         Me.dgvHistorique.TabIndex = 2
         '
         'colPlat
@@ -138,7 +136,7 @@ Partial Class FrmConsulter
         '
         Me.lblOuPlus.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.lblOuPlus.AutoSize = True
-        Me.lblOuPlus.Location = New System.Drawing.Point(472, 481)
+        Me.lblOuPlus.Location = New System.Drawing.Point(587, 475)
         Me.lblOuPlus.Name = "lblOuPlus"
         Me.lblOuPlus.Size = New System.Drawing.Size(60, 20)
         Me.lblOuPlus.TabIndex = 9
@@ -147,7 +145,7 @@ Partial Class FrmConsulter
         'cmdRechercher
         '
         Me.cmdRechercher.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.cmdRechercher.Location = New System.Drawing.Point(295, 520)
+        Me.cmdRechercher.Location = New System.Drawing.Point(295, 524)
         Me.cmdRechercher.Name = "cmdRechercher"
         Me.cmdRechercher.Size = New System.Drawing.Size(144, 35)
         Me.cmdRechercher.TabIndex = 10
@@ -157,9 +155,11 @@ Partial Class FrmConsulter
         'cboPasMange
         '
         Me.cboPasMange.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.cboPasMange.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.cboPasMange.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboPasMange.FormattingEnabled = True
-        Me.cboPasMange.Items.AddRange(New Object() {"Cinq jours", "Deux semaines", "Un jour", "Un mois", "Une semaine"})
-        Me.cboPasMange.Location = New System.Drawing.Point(345, 478)
+        Me.cboPasMange.Items.AddRange(New Object() {"", "Un jour", "Cinq jours", "Une semaine", "Deux semaines", "Un mois"})
+        Me.cboPasMange.Location = New System.Drawing.Point(460, 472)
         Me.cboPasMange.Name = "cboPasMange"
         Me.cboPasMange.Size = New System.Drawing.Size(121, 28)
         Me.cboPasMange.TabIndex = 8
@@ -168,7 +168,7 @@ Partial Class FrmConsulter
         '
         Me.lblPasMange.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.lblPasMange.AutoSize = True
-        Me.lblPasMange.Location = New System.Drawing.Point(202, 481)
+        Me.lblPasMange.Location = New System.Drawing.Point(317, 475)
         Me.lblPasMange.Name = "lblPasMange"
         Me.lblPasMange.Size = New System.Drawing.Size(140, 20)
         Me.lblPasMange.TabIndex = 7
@@ -177,9 +177,12 @@ Partial Class FrmConsulter
         'cboMangerOrigine
         '
         Me.cboMangerOrigine.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.cboMangerOrigine.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
+        Me.cboMangerOrigine.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cboMangerOrigine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboMangerOrigine.FormattingEnabled = True
-        Me.cboMangerOrigine.Items.AddRange(New Object() {"Europe", "Amérique du Nord", "Amérique du Sud", "Asie", "Afrique", "Océanie"})
-        Me.cboMangerOrigine.Location = New System.Drawing.Point(439, 440)
+        Me.cboMangerOrigine.Items.AddRange(New Object() {"", "Europe", "Amérique du Nord", "Amérique du Sud", "Asie", "Afrique", "Océanie"})
+        Me.cboMangerOrigine.Location = New System.Drawing.Point(153, 472)
         Me.cboMangerOrigine.Name = "cboMangerOrigine"
         Me.cboMangerOrigine.Size = New System.Drawing.Size(158, 28)
         Me.cboMangerOrigine.TabIndex = 6
@@ -188,34 +191,16 @@ Partial Class FrmConsulter
         '
         Me.lblOrigine.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.lblOrigine.AutoSize = True
-        Me.lblOrigine.Location = New System.Drawing.Point(374, 443)
+        Me.lblOrigine.Location = New System.Drawing.Point(88, 475)
         Me.lblOrigine.Name = "lblOrigine"
         Me.lblOrigine.Size = New System.Drawing.Size(59, 20)
         Me.lblOrigine.TabIndex = 5
         Me.lblOrigine.Text = "&Origine"
         '
-        'txtAlimentPrincipal
-        '
-        Me.txtAlimentPrincipal.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.txtAlimentPrincipal.Location = New System.Drawing.Point(268, 440)
-        Me.txtAlimentPrincipal.Name = "txtAlimentPrincipal"
-        Me.txtAlimentPrincipal.Size = New System.Drawing.Size(100, 26)
-        Me.txtAlimentPrincipal.TabIndex = 4
-        '
-        'lblAliment
-        '
-        Me.lblAliment.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.lblAliment.AutoSize = True
-        Me.lblAliment.Location = New System.Drawing.Point(138, 443)
-        Me.lblAliment.Name = "lblAliment"
-        Me.lblAliment.Size = New System.Drawing.Size(124, 20)
-        Me.lblAliment.TabIndex = 3
-        Me.lblAliment.Text = "&Aliment principal"
-        '
         'btnChoisir
         '
         Me.btnChoisir.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnChoisir.Location = New System.Drawing.Point(633, 520)
+        Me.btnChoisir.Location = New System.Drawing.Point(633, 524)
         Me.btnChoisir.Name = "btnChoisir"
         Me.btnChoisir.Size = New System.Drawing.Size(89, 35)
         Me.btnChoisir.TabIndex = 11
@@ -227,7 +212,7 @@ Partial Class FrmConsulter
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(734, 567)
+        Me.ClientSize = New System.Drawing.Size(734, 571)
         Me.Controls.Add(Me.btnChoisir)
         Me.Controls.Add(Me.lblOuPlus)
         Me.Controls.Add(Me.cmdRechercher)
@@ -235,8 +220,6 @@ Partial Class FrmConsulter
         Me.Controls.Add(Me.lblPasMange)
         Me.Controls.Add(Me.cboMangerOrigine)
         Me.Controls.Add(Me.lblOrigine)
-        Me.Controls.Add(Me.txtAlimentPrincipal)
-        Me.Controls.Add(Me.lblAliment)
         Me.Controls.Add(Me.dgvHistorique)
         Me.Controls.Add(Me.lblCritere)
         Me.Controls.Add(Me.lblMangerTitre)
@@ -263,14 +246,12 @@ Partial Class FrmConsulter
     Friend WithEvents cmdRechercher As Button
     Friend WithEvents cboPasMange As ComboBox
     Friend WithEvents lblPasMange As Label
-    Friend WithEvents cboMangerOrigine As ComboBox
     Friend WithEvents lblOrigine As Label
-    Friend WithEvents txtAlimentPrincipal As TextBox
-    Friend WithEvents lblAliment As Label
     Friend WithEvents btnChoisir As Button
     Friend WithEvents colPlat As DataGridViewTextBoxColumn
     Friend WithEvents colAlimentsPrincipaux As DataGridViewTextBoxColumn
     Friend WithEvents colOrigine As DataGridViewTextBoxColumn
     Friend WithEvents colMangeLe As DataGridViewTextBoxColumn
     Friend WithEvents colNote As DataGridViewTextBoxColumn
+    Friend WithEvents cboMangerOrigine As ComboBox
 End Class
