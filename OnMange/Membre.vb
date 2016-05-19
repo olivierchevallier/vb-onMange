@@ -9,6 +9,18 @@
         Me.autorisation = autorisation
     End Sub
 
+    Public Function getDateNaissance() As Date
+        Return dateNaissance
+    End Function
+
+    Public Function getAutorisation() As String
+        Return autorisation
+    End Function
+
+    Public Function isAdder() As Boolean
+        Return autorisation = "A"
+    End Function
+
     Public Overrides Function ToString() As String
         Return prenom
     End Function

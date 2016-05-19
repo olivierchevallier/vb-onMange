@@ -1,17 +1,23 @@
 ﻿Public Class FrmAdmin
+    Dim modifier As Boolean
+    Dim membreSelectionne As Membre
+
     Private Sub FrmAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         datAdminDateNaissance.MaxDate = Date.Now
         AfficherMembres()
     End Sub
 
     Private Sub lstUtilisateurs_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstUtilisateurs.SelectedIndexChanged
-        If lstUtilisateurs.SelectedItems.Count <= 0 Then
-            btnEditer.Text = "&Ajouter un nouveau membre"
-            mnAdminStripSupprimer.Enabled = False
-        Else
-            afficherInfoMembre(listeMembres(lstUtilisateurs.SelectedIndices(0)))
+        modifier = lstUtilisateurs.SelectedItems.Count > 0
+        If modifier Then
+            membreSelectionne = listeMembres(lstUtilisateurs.SelectedIndices(0))
+            afficherInfoMembre(membreSelectionne)
             btnEditer.Text = "&Modifier ce membre"
             mnAdminStripSupprimer.Enabled = True
+        Else
+            btnEditer.Text = "&Ajouter un nouveau membre"
+            mnAdminStripSupprimer.Enabled = False
+            effacerChamps()
         End If
     End Sub
 
@@ -30,7 +36,25 @@
     End Sub
 
     Private Sub afficherInfoMembre(ByVal membreAAfficher As Membre)
-        'A terminer
-        txtAdminPrenom.Text = membreAAfficher.ToString
+        txtAdminPrenom.Text = membreAAfficher.ToString()
+        datAdminDateNaissance.Value = membreAAfficher.getDateNaissance()
+        If membreAAfficher.isAdder() Then
+            cbxAdminAutorisations.SelectedIndex = 1
+        Else
+            cbxAdminAutorisations.SelectedIndex = 0
+        End If
+    End Sub
+
+    Private Sub effacerChamps()
+        txtAdminPrenom.Text = ""
+        datAdminDateNaissance.Value = datAdminDateNaissance.MaxDate
+        cbxAdminAutorisations.SelectedIndex = -1
+    End Sub
+
+    Private Sub btnEditer_Click(sender As Object, e As EventArgs) Handles btnEditer.Click
+        If modifier Then
+            Dim membreModifie As Membre = New Membre(txtAdminPrenom.Text, datAdminDateNaissance.Value, cbxAdminAutorisations.SelectedValue)
+            'updateMembre(membreSelectionne, membreModifie)
+        End If
     End Sub
 End Class

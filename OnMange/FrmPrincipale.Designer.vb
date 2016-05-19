@@ -28,15 +28,13 @@ Partial Class FrmPrincipale
         Me.cmdRechercher = New System.Windows.Forms.Button()
         Me.picManger = New System.Windows.Forms.PictureBox()
         Me.pnlMangerProposition = New System.Windows.Forms.Panel()
+        Me.lblPropositionOrigine = New System.Windows.Forms.Label()
         Me.picMangerEtoile5 = New System.Windows.Forms.PictureBox()
         Me.picMangerEtoile2 = New System.Windows.Forms.PictureBox()
         Me.picMangerEtoile3 = New System.Windows.Forms.PictureBox()
+        Me.lblPropositionPlat = New System.Windows.Forms.Label()
         Me.picMangerEtoile4 = New System.Windows.Forms.PictureBox()
         Me.picMangerEtoile1 = New System.Windows.Forms.PictureBox()
-        Me.lblPropositionNote = New System.Windows.Forms.Label()
-        Me.lblPropositionOrigine = New System.Windows.Forms.Label()
-        Me.lblPropositionAliments = New System.Windows.Forms.Label()
-        Me.lblPropositionPlat = New System.Windows.Forms.Label()
         Me.lblPropositionJour = New System.Windows.Forms.Label()
         Me.lblMangerTitre = New System.Windows.Forms.Label()
         Me.tabAjouter = New System.Windows.Forms.TabPage()
@@ -73,9 +71,7 @@ Partial Class FrmPrincipale
         Me.picNoterMoyenneEtoile3 = New System.Windows.Forms.PictureBox()
         Me.picNoterMoyenneEtoile4 = New System.Windows.Forms.PictureBox()
         Me.picNoterMoyenneEtoile1 = New System.Windows.Forms.PictureBox()
-        Me.lblNoterNoteMoyenne = New System.Windows.Forms.Label()
         Me.lblNoterOrigine = New System.Windows.Forms.Label()
-        Me.lblNoterAliments = New System.Windows.Forms.Label()
         Me.lblNoterPlat = New System.Windows.Forms.Label()
         Me.lblNoterTitre = New System.Windows.Forms.Label()
         Me.picNoterPersoEtoile5 = New System.Windows.Forms.PictureBox()
@@ -253,26 +249,33 @@ Partial Class FrmPrincipale
         Me.pnlMangerProposition.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.pnlMangerProposition.BackColor = System.Drawing.Color.White
         Me.pnlMangerProposition.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlMangerProposition.Controls.Add(Me.lblPropositionOrigine)
         Me.pnlMangerProposition.Controls.Add(Me.picMangerEtoile5)
         Me.pnlMangerProposition.Controls.Add(Me.picMangerEtoile2)
         Me.pnlMangerProposition.Controls.Add(Me.picMangerEtoile3)
+        Me.pnlMangerProposition.Controls.Add(Me.lblPropositionPlat)
         Me.pnlMangerProposition.Controls.Add(Me.picMangerEtoile4)
         Me.pnlMangerProposition.Controls.Add(Me.picMangerEtoile1)
-        Me.pnlMangerProposition.Controls.Add(Me.lblPropositionNote)
-        Me.pnlMangerProposition.Controls.Add(Me.lblPropositionOrigine)
-        Me.pnlMangerProposition.Controls.Add(Me.lblPropositionAliments)
-        Me.pnlMangerProposition.Controls.Add(Me.lblPropositionPlat)
-        Me.pnlMangerProposition.Location = New System.Drawing.Point(89, 183)
+        Me.pnlMangerProposition.Location = New System.Drawing.Point(117, 185)
         Me.pnlMangerProposition.Name = "pnlMangerProposition"
-        Me.pnlMangerProposition.Size = New System.Drawing.Size(339, 124)
+        Me.pnlMangerProposition.Size = New System.Drawing.Size(279, 103)
         Me.pnlMangerProposition.TabIndex = 2
+        '
+        'lblPropositionOrigine
+        '
+        Me.lblPropositionOrigine.AutoSize = True
+        Me.lblPropositionOrigine.Location = New System.Drawing.Point(109, 36)
+        Me.lblPropositionOrigine.Name = "lblPropositionOrigine"
+        Me.lblPropositionOrigine.Size = New System.Drawing.Size(59, 20)
+        Me.lblPropositionOrigine.TabIndex = 9
+        Me.lblPropositionOrigine.Text = "Origine"
         '
         'picMangerEtoile5
         '
         Me.picMangerEtoile5.Image = CType(resources.GetObject("picMangerEtoile5.Image"), System.Drawing.Image)
-        Me.picMangerEtoile5.Location = New System.Drawing.Point(171, 97)
+        Me.picMangerEtoile5.Location = New System.Drawing.Point(195, 65)
         Me.picMangerEtoile5.Name = "picMangerEtoile5"
-        Me.picMangerEtoile5.Size = New System.Drawing.Size(20, 20)
+        Me.picMangerEtoile5.Size = New System.Drawing.Size(30, 30)
         Me.picMangerEtoile5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picMangerEtoile5.TabIndex = 8
         Me.picMangerEtoile5.TabStop = False
@@ -280,9 +283,9 @@ Partial Class FrmPrincipale
         'picMangerEtoile2
         '
         Me.picMangerEtoile2.Image = CType(resources.GetObject("picMangerEtoile2.Image"), System.Drawing.Image)
-        Me.picMangerEtoile2.Location = New System.Drawing.Point(93, 97)
+        Me.picMangerEtoile2.Location = New System.Drawing.Point(87, 65)
         Me.picMangerEtoile2.Name = "picMangerEtoile2"
-        Me.picMangerEtoile2.Size = New System.Drawing.Size(20, 20)
+        Me.picMangerEtoile2.Size = New System.Drawing.Size(30, 30)
         Me.picMangerEtoile2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picMangerEtoile2.TabIndex = 7
         Me.picMangerEtoile2.TabStop = False
@@ -290,19 +293,29 @@ Partial Class FrmPrincipale
         'picMangerEtoile3
         '
         Me.picMangerEtoile3.Image = CType(resources.GetObject("picMangerEtoile3.Image"), System.Drawing.Image)
-        Me.picMangerEtoile3.Location = New System.Drawing.Point(119, 97)
+        Me.picMangerEtoile3.Location = New System.Drawing.Point(123, 65)
         Me.picMangerEtoile3.Name = "picMangerEtoile3"
-        Me.picMangerEtoile3.Size = New System.Drawing.Size(20, 20)
+        Me.picMangerEtoile3.Size = New System.Drawing.Size(30, 30)
         Me.picMangerEtoile3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picMangerEtoile3.TabIndex = 6
         Me.picMangerEtoile3.TabStop = False
         '
+        'lblPropositionPlat
+        '
+        Me.lblPropositionPlat.AutoSize = True
+        Me.lblPropositionPlat.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPropositionPlat.Location = New System.Drawing.Point(109, 7)
+        Me.lblPropositionPlat.Name = "lblPropositionPlat"
+        Me.lblPropositionPlat.Size = New System.Drawing.Size(58, 29)
+        Me.lblPropositionPlat.TabIndex = 0
+        Me.lblPropositionPlat.Text = "Plat"
+        '
         'picMangerEtoile4
         '
         Me.picMangerEtoile4.Image = CType(resources.GetObject("picMangerEtoile4.Image"), System.Drawing.Image)
-        Me.picMangerEtoile4.Location = New System.Drawing.Point(145, 97)
+        Me.picMangerEtoile4.Location = New System.Drawing.Point(159, 65)
         Me.picMangerEtoile4.Name = "picMangerEtoile4"
-        Me.picMangerEtoile4.Size = New System.Drawing.Size(20, 20)
+        Me.picMangerEtoile4.Size = New System.Drawing.Size(30, 30)
         Me.picMangerEtoile4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picMangerEtoile4.TabIndex = 5
         Me.picMangerEtoile4.TabStop = False
@@ -310,48 +323,12 @@ Partial Class FrmPrincipale
         'picMangerEtoile1
         '
         Me.picMangerEtoile1.Image = CType(resources.GetObject("picMangerEtoile1.Image"), System.Drawing.Image)
-        Me.picMangerEtoile1.Location = New System.Drawing.Point(67, 97)
+        Me.picMangerEtoile1.Location = New System.Drawing.Point(51, 65)
         Me.picMangerEtoile1.Name = "picMangerEtoile1"
-        Me.picMangerEtoile1.Size = New System.Drawing.Size(20, 20)
+        Me.picMangerEtoile1.Size = New System.Drawing.Size(30, 30)
         Me.picMangerEtoile1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picMangerEtoile1.TabIndex = 4
         Me.picMangerEtoile1.TabStop = False
-        '
-        'lblPropositionNote
-        '
-        Me.lblPropositionNote.AutoSize = True
-        Me.lblPropositionNote.Location = New System.Drawing.Point(10, 94)
-        Me.lblPropositionNote.Name = "lblPropositionNote"
-        Me.lblPropositionNote.Size = New System.Drawing.Size(51, 20)
-        Me.lblPropositionNote.TabIndex = 3
-        Me.lblPropositionNote.Text = "Note :"
-        '
-        'lblPropositionOrigine
-        '
-        Me.lblPropositionOrigine.AutoSize = True
-        Me.lblPropositionOrigine.Location = New System.Drawing.Point(10, 74)
-        Me.lblPropositionOrigine.Name = "lblPropositionOrigine"
-        Me.lblPropositionOrigine.Size = New System.Drawing.Size(123, 20)
-        Me.lblPropositionOrigine.TabIndex = 2
-        Me.lblPropositionOrigine.Text = "Origine : Europe"
-        '
-        'lblPropositionAliments
-        '
-        Me.lblPropositionAliments.AutoSize = True
-        Me.lblPropositionAliments.Location = New System.Drawing.Point(10, 30)
-        Me.lblPropositionAliments.Name = "lblPropositionAliments"
-        Me.lblPropositionAliments.Size = New System.Drawing.Size(259, 20)
-        Me.lblPropositionAliments.TabIndex = 1
-        Me.lblPropositionAliments.Text = "Aliments principaux : Fromage, pain"
-        '
-        'lblPropositionPlat
-        '
-        Me.lblPropositionPlat.AutoSize = True
-        Me.lblPropositionPlat.Location = New System.Drawing.Point(10, 10)
-        Me.lblPropositionPlat.Name = "lblPropositionPlat"
-        Me.lblPropositionPlat.Size = New System.Drawing.Size(103, 20)
-        Me.lblPropositionPlat.TabIndex = 0
-        Me.lblPropositionPlat.Text = "Plat : Fondue"
         '
         'lblPropositionJour
         '
@@ -648,7 +625,6 @@ Partial Class FrmPrincipale
         Me.optSoir.Name = "optSoir"
         Me.optSoir.Size = New System.Drawing.Size(55, 24)
         Me.optSoir.TabIndex = 37
-        Me.optSoir.TabStop = True
         Me.optSoir.Text = "Soir"
         Me.optSoir.UseVisualStyleBackColor = True
         '
@@ -656,6 +632,7 @@ Partial Class FrmPrincipale
         '
         Me.optMidi.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.optMidi.AutoSize = True
+        Me.optMidi.Checked = True
         Me.optMidi.Location = New System.Drawing.Point(258, 150)
         Me.optMidi.Name = "optMidi"
         Me.optMidi.Size = New System.Drawing.Size(55, 24)
@@ -703,9 +680,7 @@ Partial Class FrmPrincipale
         Me.pnlNoter.Controls.Add(Me.picNoterMoyenneEtoile3)
         Me.pnlNoter.Controls.Add(Me.picNoterMoyenneEtoile4)
         Me.pnlNoter.Controls.Add(Me.picNoterMoyenneEtoile1)
-        Me.pnlNoter.Controls.Add(Me.lblNoterNoteMoyenne)
         Me.pnlNoter.Controls.Add(Me.lblNoterOrigine)
-        Me.pnlNoter.Controls.Add(Me.lblNoterAliments)
         Me.pnlNoter.Controls.Add(Me.lblNoterPlat)
         Me.pnlNoter.Location = New System.Drawing.Point(117, 185)
         Me.pnlNoter.Name = "pnlNoter"
@@ -715,9 +690,9 @@ Partial Class FrmPrincipale
         'picNoterMoyenneEtoile5
         '
         Me.picNoterMoyenneEtoile5.Image = CType(resources.GetObject("picNoterMoyenneEtoile5.Image"), System.Drawing.Image)
-        Me.picNoterMoyenneEtoile5.Location = New System.Drawing.Point(240, 73)
+        Me.picNoterMoyenneEtoile5.Location = New System.Drawing.Point(195, 65)
         Me.picNoterMoyenneEtoile5.Name = "picNoterMoyenneEtoile5"
-        Me.picNoterMoyenneEtoile5.Size = New System.Drawing.Size(20, 20)
+        Me.picNoterMoyenneEtoile5.Size = New System.Drawing.Size(30, 30)
         Me.picNoterMoyenneEtoile5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picNoterMoyenneEtoile5.TabIndex = 8
         Me.picNoterMoyenneEtoile5.TabStop = False
@@ -725,9 +700,9 @@ Partial Class FrmPrincipale
         'picNoterMoyenneEtoile2
         '
         Me.picNoterMoyenneEtoile2.Image = CType(resources.GetObject("picNoterMoyenneEtoile2.Image"), System.Drawing.Image)
-        Me.picNoterMoyenneEtoile2.Location = New System.Drawing.Point(162, 73)
+        Me.picNoterMoyenneEtoile2.Location = New System.Drawing.Point(87, 65)
         Me.picNoterMoyenneEtoile2.Name = "picNoterMoyenneEtoile2"
-        Me.picNoterMoyenneEtoile2.Size = New System.Drawing.Size(20, 20)
+        Me.picNoterMoyenneEtoile2.Size = New System.Drawing.Size(30, 30)
         Me.picNoterMoyenneEtoile2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picNoterMoyenneEtoile2.TabIndex = 7
         Me.picNoterMoyenneEtoile2.TabStop = False
@@ -735,9 +710,9 @@ Partial Class FrmPrincipale
         'picNoterMoyenneEtoile3
         '
         Me.picNoterMoyenneEtoile3.Image = CType(resources.GetObject("picNoterMoyenneEtoile3.Image"), System.Drawing.Image)
-        Me.picNoterMoyenneEtoile3.Location = New System.Drawing.Point(188, 73)
+        Me.picNoterMoyenneEtoile3.Location = New System.Drawing.Point(123, 65)
         Me.picNoterMoyenneEtoile3.Name = "picNoterMoyenneEtoile3"
-        Me.picNoterMoyenneEtoile3.Size = New System.Drawing.Size(20, 20)
+        Me.picNoterMoyenneEtoile3.Size = New System.Drawing.Size(30, 30)
         Me.picNoterMoyenneEtoile3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picNoterMoyenneEtoile3.TabIndex = 6
         Me.picNoterMoyenneEtoile3.TabStop = False
@@ -745,9 +720,9 @@ Partial Class FrmPrincipale
         'picNoterMoyenneEtoile4
         '
         Me.picNoterMoyenneEtoile4.Image = CType(resources.GetObject("picNoterMoyenneEtoile4.Image"), System.Drawing.Image)
-        Me.picNoterMoyenneEtoile4.Location = New System.Drawing.Point(214, 73)
+        Me.picNoterMoyenneEtoile4.Location = New System.Drawing.Point(159, 65)
         Me.picNoterMoyenneEtoile4.Name = "picNoterMoyenneEtoile4"
-        Me.picNoterMoyenneEtoile4.Size = New System.Drawing.Size(20, 20)
+        Me.picNoterMoyenneEtoile4.Size = New System.Drawing.Size(30, 30)
         Me.picNoterMoyenneEtoile4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picNoterMoyenneEtoile4.TabIndex = 5
         Me.picNoterMoyenneEtoile4.TabStop = False
@@ -755,48 +730,31 @@ Partial Class FrmPrincipale
         'picNoterMoyenneEtoile1
         '
         Me.picNoterMoyenneEtoile1.Image = CType(resources.GetObject("picNoterMoyenneEtoile1.Image"), System.Drawing.Image)
-        Me.picNoterMoyenneEtoile1.Location = New System.Drawing.Point(136, 73)
+        Me.picNoterMoyenneEtoile1.Location = New System.Drawing.Point(51, 65)
         Me.picNoterMoyenneEtoile1.Name = "picNoterMoyenneEtoile1"
-        Me.picNoterMoyenneEtoile1.Size = New System.Drawing.Size(20, 20)
+        Me.picNoterMoyenneEtoile1.Size = New System.Drawing.Size(30, 30)
         Me.picNoterMoyenneEtoile1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picNoterMoyenneEtoile1.TabIndex = 4
         Me.picNoterMoyenneEtoile1.TabStop = False
         '
-        'lblNoterNoteMoyenne
-        '
-        Me.lblNoterNoteMoyenne.AutoSize = True
-        Me.lblNoterNoteMoyenne.Location = New System.Drawing.Point(10, 70)
-        Me.lblNoterNoteMoyenne.Name = "lblNoterNoteMoyenne"
-        Me.lblNoterNoteMoyenne.Size = New System.Drawing.Size(120, 20)
-        Me.lblNoterNoteMoyenne.TabIndex = 3
-        Me.lblNoterNoteMoyenne.Text = "Note moyenne :"
-        '
         'lblNoterOrigine
         '
         Me.lblNoterOrigine.AutoSize = True
-        Me.lblNoterOrigine.Location = New System.Drawing.Point(10, 50)
+        Me.lblNoterOrigine.Location = New System.Drawing.Point(109, 36)
         Me.lblNoterOrigine.Name = "lblNoterOrigine"
-        Me.lblNoterOrigine.Size = New System.Drawing.Size(123, 20)
+        Me.lblNoterOrigine.Size = New System.Drawing.Size(59, 20)
         Me.lblNoterOrigine.TabIndex = 2
-        Me.lblNoterOrigine.Text = "Origine : Europe"
-        '
-        'lblNoterAliments
-        '
-        Me.lblNoterAliments.AutoSize = True
-        Me.lblNoterAliments.Location = New System.Drawing.Point(10, 30)
-        Me.lblNoterAliments.Name = "lblNoterAliments"
-        Me.lblNoterAliments.Size = New System.Drawing.Size(259, 20)
-        Me.lblNoterAliments.TabIndex = 1
-        Me.lblNoterAliments.Text = "Aliments principaux : Fromage, pain"
+        Me.lblNoterOrigine.Text = "Origine"
         '
         'lblNoterPlat
         '
         Me.lblNoterPlat.AutoSize = True
-        Me.lblNoterPlat.Location = New System.Drawing.Point(10, 10)
+        Me.lblNoterPlat.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold)
+        Me.lblNoterPlat.Location = New System.Drawing.Point(109, 7)
         Me.lblNoterPlat.Name = "lblNoterPlat"
-        Me.lblNoterPlat.Size = New System.Drawing.Size(103, 20)
+        Me.lblNoterPlat.Size = New System.Drawing.Size(58, 29)
         Me.lblNoterPlat.TabIndex = 0
-        Me.lblNoterPlat.Text = "Plat : Fondue"
+        Me.lblNoterPlat.Text = "Plat"
         '
         'lblNoterTitre
         '
@@ -1489,9 +1447,6 @@ Partial Class FrmPrincipale
     Friend WithEvents lblPropositionJour As Label
     Friend WithEvents pnlMangerProposition As Panel
     Friend WithEvents picMangerEtoile1 As PictureBox
-    Friend WithEvents lblPropositionNote As Label
-    Friend WithEvents lblPropositionOrigine As Label
-    Friend WithEvents lblPropositionAliments As Label
     Friend WithEvents lblPropositionPlat As Label
     Friend WithEvents picMangerEtoile5 As PictureBox
     Friend WithEvents picMangerEtoile2 As PictureBox
@@ -1525,9 +1480,7 @@ Partial Class FrmPrincipale
     Friend WithEvents picNoterMoyenneEtoile3 As PictureBox
     Friend WithEvents picNoterMoyenneEtoile4 As PictureBox
     Friend WithEvents picNoterMoyenneEtoile1 As PictureBox
-    Friend WithEvents lblNoterNoteMoyenne As Label
     Friend WithEvents lblNoterOrigine As Label
-    Friend WithEvents lblNoterAliments As Label
     Friend WithEvents lblNoterPlat As Label
     Friend WithEvents lblPlanifierPropositions As Label
     Friend WithEvents calPlanifier As MonthCalendar
@@ -1588,4 +1541,5 @@ Partial Class FrmPrincipale
     Friend WithEvents datNoterJour As DateTimePicker
     Friend WithEvents lblOu As Label
     Friend WithEvents btnPlatExistant As Button
+    Friend WithEvents lblPropositionOrigine As Label
 End Class

@@ -18,10 +18,9 @@ Module ModMembres
     End Sub
 
     Public Sub updateMembre(ByVal membreAModifier As Membre, ByVal membreModife As Membre)
-        'Ne fonctionne pas encore
         Dim strRequete As String
         Dim reader_Sql As OracleDataReader
-        strRequete = "UPDATE vw_utilisateurs SET Prenom = '" + membreModife.ToString() + "', Date_Naissance = to_date('" + membreModife.getDateNaissance() + "', 'DD/MM/YYYY'), Autorisation = '" + membreModife.getAutorisation() + "' WHERE Prenom = '" + membreAModifier.ToString() + "'"
+        strRequete = "UPDATE vw_utilisateurs SET Date_Naissance = to_date('" + membreModife.getDateNaissance() + "', 'DD/MM/YYYY'), Autorisation = '" + membreModife.getAutorisation() + "' WHERE Prenom = '" + membreAModifier.ToString() + "'"
         do_sql(strRequete, reader_Sql)
     End Sub
 End Module

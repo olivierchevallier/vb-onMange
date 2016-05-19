@@ -138,9 +138,11 @@
     <Compile Include="GestionConnexion.vb" />
     <Compile Include="GestionNote.vb" />
     <Compile Include="Membre.vb" />
+    <Compile Include="ModAliments.vb" />
     <Compile Include="ModBDD.vb" />
     <Compile Include="ModMembres.vb" />
     <Compile Include="ModPlats.vb" />
+    <Compile Include="ModRepas.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -157,6 +159,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Plat.vb" />
+    <Compile Include="Repas.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FrmAdmin.resx">

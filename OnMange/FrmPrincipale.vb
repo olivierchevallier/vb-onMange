@@ -4,13 +4,11 @@ Imports System.Data.OracleClient
 Public Class FrmPrincipale
     Const FRM_HEIGHT = 600
     Const FRM_WIDTH = 560
-    Const TXT_PLAT = "Plat : "
-    Const TXT_ALIMENTS = "Aliments principaux : "
-    Const TXT_ORIGINE = "Origine : "
 
     Dim starsNoter As Collection = New Collection
     Dim starsAjouter As Collection = New Collection
     Dim starsProposition As Collection = New Collection
+    Dim starsAfficheNoter As Collection = New Collection
     Dim propositions As Collection = New Collection
     Dim noteAjouter As Integer = 0
     Dim noteNoter As Integer = 0
@@ -60,6 +58,13 @@ Public Class FrmPrincipale
         starsNoter.Add(picNoterPersoEtoile3)
         starsNoter.Add(picNoterPersoEtoile4)
         starsNoter.Add(picNoterPersoEtoile5)
+
+        'Ajout des étoiles du panel de l'onglet noter à la collection
+        starsAfficheNoter.Add(picNoterMoyenneEtoile1)
+        starsAfficheNoter.Add(picNoterMoyenneEtoile2)
+        starsAfficheNoter.Add(picNoterMoyenneEtoile3)
+        starsAfficheNoter.Add(picNoterMoyenneEtoile4)
+        starsAfficheNoter.Add(picNoterMoyenneEtoile5)
 
         'Ajout du panel à la collection
         propositions.Add(pnlProposition1)
@@ -166,12 +171,41 @@ Public Class FrmPrincipale
         FrmConsulter.Text = "On Mange ! - Consulter l'historique"
     End Sub
 
-    'Fonctions d'accès à la base de données
     Private Sub AfficherPropositionJour()
         Dim platPropose As Plat = PropositionDuJour()
-        lblPropositionPlat.Text = TXT_PLAT + platPropose.GetNomPlat()
-        lblPropositionAliments.Text = TXT_ALIMENTS + Environment.NewLine + platPropose.GetAlimentsString()
-        lblPropositionOrigine.Text = TXT_ORIGINE + platPropose.GetOrigine()
+        lblPropositionPlat.Text = platPropose.GetNomPlat()
+        lblPropositionOrigine.Text = platPropose.GetOrigine()
+        lblPropositionPlat.Location = New Point(((pnlMangerProposition.Width - lblPropositionPlat.Width) \ 2), lblPropositionPlat.Location.Y)
+        lblPropositionOrigine.Location = New Point(((pnlMangerProposition.Width - lblPropositionOrigine.Width) \ 2), lblPropositionOrigine.Location.Y)
         afficherNote(platPropose.GetNoteMoyenne(), starsProposition)
+    End Sub
+
+    Private Sub AfficherANoter()
+        Dim dateChoise As Date
+        Dim moment As String
+        If (optMidi.Checked) Then
+            moment = "m"
+        Else
+            moment = "s"
+        End If
+        dateChoise = datNoterJour.Value
+        recupUnRepas(dateChoise, moment)
+        lblNoterPlat.Text = repasCourant.GetNomPlat
+        lblNoterOrigine.Text = repasCourant.GetOrigine
+        lblNoterPlat.Location = New Point(((pnlNoter.Width - lblNoterPlat.Width) \ 2), lblNoterPlat.Location.Y)
+        lblNoterOrigine.Location = New Point(((pnlNoter.Width - lblNoterOrigine.Width) \ 2), lblNoterOrigine.Location.Y)
+    End Sub
+
+    Private Sub datNoterJour_ValueChanged(sender As Object, e As EventArgs) Handles datNoterJour.ValueChanged
+        'AfficherANoter()
+    End Sub
+
+    Private Sub optMidi_CheckedChanged(sender As Object, e As EventArgs) Handles optMidi.CheckedChanged
+        'AfficherANoter()
+    End Sub
+
+    Private Sub optSoir_CheckedChanged(sender As Object, e As EventArgs) Handles optSoir.CheckedChanged
+        'Reste a gérer les dates sans repas...
+        AfficherANoter()
     End Sub
 End Class
