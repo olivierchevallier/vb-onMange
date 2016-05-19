@@ -2,7 +2,8 @@
 
 Module ModBDD
 
-    Public oradb As String = "Data Source=XE;User ID=onMange_user;Password=onMange_user;"
+    'Public oradb As String = "Data Source=XE;User ID=onMange_user;Password=onMange_user;"
+    Public oradb As String = "Data Source=HEGLOCAL;User ID=onMange_user;Password=onMange_user;"
     Public connexion As New OracleConnection(oradb)
 
     Public Sub connection()
