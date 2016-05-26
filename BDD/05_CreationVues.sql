@@ -6,8 +6,8 @@
 -- -----------------------------------------------------
 -- Affichage des utilisateurs
 -- -----------------------------------------------------
-CREATE OR REPLACE VIEW vw_utilisateurs (Prénom, Date_Naissance, Autorisation) AS
-       SELECT INITCAP(mem_prenom), mem_naissance, mem_autorisation
+CREATE OR REPLACE VIEW vw_utilisateurs (Prénom, Date_Naissance, Autorisation, Identifiant) AS
+       SELECT INITCAP(mem_prenom), mem_naissance, mem_autorisation, mem_no
        FROM onm_membre
        ORDER BY mem_naissance DESC;
 
@@ -57,6 +57,70 @@ CREATE OR REPLACE VIEW vw_composants (Plat, Aliment) AS
        RIGHT JOIN onm_plat ON com_pla_no = pla_no;
 
 GRANT SELECT, INSERT, UPDATE, DELETE ON vw_composants TO onMange_user;
+
+-- -----------------------------------------------------
+-- Vue onm_aliments
+-- -----------------------------------------------------
+CREATE OR REPLACE VIEW vw_onm_aliment AS
+       SELECT * FROM onm_aliment;
+       
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_onm_aliment TO onMange_user;
+
+-- -----------------------------------------------------
+-- Vue onm_compose
+-- -----------------------------------------------------
+CREATE OR REPLACE VIEW vw_onm_compose AS
+       SELECT * FROM onm_compose;
+       
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_onm_compose TO onMange_user;
+
+-- -----------------------------------------------------
+-- Vue onm_membre 
+-- -----------------------------------------------------
+CREATE OR REPLACE VIEW vw_onm_membre AS
+       SELECT * FROM onm_membre;
+       
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_onm_membre TO onMange_user;
+
+-- -----------------------------------------------------
+-- Vue onm_note
+-- -----------------------------------------------------
+CREATE OR REPLACE VIEW vw_onm_note AS
+       SELECT * FROM onm_note;
+       
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_onm_note TO onMange_user;
+
+-- -----------------------------------------------------
+-- Vue onm_origine
+-- -----------------------------------------------------
+CREATE OR REPLACE VIEW vw_onm_origine AS
+       SELECT * FROM onm_origine;
+       
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_onm_origine TO onMange_user;
+
+-- -----------------------------------------------------
+-- Vue vw_onm_plat
+-- -----------------------------------------------------
+CREATE OR REPLACE VIEW vw_onm_plat AS
+       SELECT * FROM onm_plat;
+       
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_onm_plat TO onMange_user;
+
+-- -----------------------------------------------------
+-- Vue onm_repas
+-- -----------------------------------------------------
+CREATE OR REPLACE VIEW vw_onm_repas AS
+       SELECT * FROM onm_repas;
+       
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_onm_repas TO onMange_user;
+
+-- -----------------------------------------------------
+-- Vue onm_vote
+-- -----------------------------------------------------
+CREATE OR REPLACE VIEW vw_onm_vote AS
+       SELECT * FROM onm_vote;
+       
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_onm_vote TO onMange_user;
 
 -- SELECT * FROM vw_utilisateurs;
 -- SELECT * FROM vw_plats;
