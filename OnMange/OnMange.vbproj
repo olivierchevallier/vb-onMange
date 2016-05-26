@@ -96,6 +96,24 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Composants\ChoixPlat.Designer.vb">
+      <DependentUpon>ChoixPlat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Composants\ChoixPlat.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Composants\Note.Designer.vb">
+      <DependentUpon>Note.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Composants\Note.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Composants\Plat.Designer.vb">
+      <DependentUpon>Plat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Composants\Plat.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="DataSet1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -162,6 +180,15 @@
     <Compile Include="Repas.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Composants\ChoixPlat.resx">
+      <DependentUpon>ChoixPlat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Composants\Note.resx">
+      <DependentUpon>Note.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Composants\Plat.resx">
+      <DependentUpon>Plat.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAdmin.resx">
       <DependentUpon>FrmAdmin.vb</DependentUpon>
     </EmbeddedResource>
