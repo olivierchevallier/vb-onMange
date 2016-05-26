@@ -23,11 +23,11 @@ Partial Class FrmAdmin
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ListViewItem1 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Romain", 0)
-        Dim ListViewItem2 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Ophélie", "people.png")
-        Dim ListViewItem3 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Olivier", 0)
-        Dim ListViewItem4 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Clothilde", 0)
-        Dim ListViewItem5 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Benoît", 0)
+        Dim ListViewItem6 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Romain", 0)
+        Dim ListViewItem7 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Ophélie", "people.png")
+        Dim ListViewItem8 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Olivier", 0)
+        Dim ListViewItem9 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Clothilde", 0)
+        Dim ListViewItem10 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Benoît", 0)
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmAdmin))
         Me.lblAdminTitre = New System.Windows.Forms.Label()
         Me.lblAdminNom = New System.Windows.Forms.Label()
@@ -80,6 +80,7 @@ Partial Class FrmAdmin
         'txtAdminNom
         '
         Me.txtAdminNom.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.txtAdminNom.Enabled = False
         Me.txtAdminNom.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.txtAdminNom.Location = New System.Drawing.Point(247, 166)
         Me.txtAdminNom.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
@@ -96,7 +97,7 @@ Partial Class FrmAdmin
         Me.lstUtilisateurs.BackColor = System.Drawing.Color.White
         Me.lstUtilisateurs.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lstUtilisateurs.ContextMenuStrip = Me.mnuAdminContext
-        Me.lstUtilisateurs.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1, ListViewItem2, ListViewItem3, ListViewItem4, ListViewItem5})
+        Me.lstUtilisateurs.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem6, ListViewItem7, ListViewItem8, ListViewItem9, ListViewItem10})
         Me.lstUtilisateurs.LargeImageList = Me.imgLstUtilisateurs
         Me.lstUtilisateurs.Location = New System.Drawing.Point(12, 230)
         Me.lstUtilisateurs.MultiSelect = False
@@ -114,7 +115,7 @@ Partial Class FrmAdmin
         'mnuAminContextSupprimer
         '
         Me.mnuAminContextSupprimer.Name = "mnuAminContextSupprimer"
-        Me.mnuAminContextSupprimer.Size = New System.Drawing.Size(129, 22)
+        Me.mnuAminContextSupprimer.Size = New System.Drawing.Size(152, 22)
         Me.mnuAminContextSupprimer.Text = "Supprimer"
         '
         'imgLstUtilisateurs
@@ -192,6 +193,9 @@ Partial Class FrmAdmin
         'cbxAdminAutorisations
         '
         Me.cbxAdminAutorisations.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.cbxAdminAutorisations.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cbxAdminAutorisations.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cbxAdminAutorisations.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxAdminAutorisations.FormattingEnabled = True
         Me.cbxAdminAutorisations.Items.AddRange(New Object() {"Noter", "Noter + Ajouter"})
         Me.cbxAdminAutorisations.Location = New System.Drawing.Point(139, 504)
