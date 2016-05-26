@@ -5,7 +5,6 @@
         InitialiserPlats()
     End Sub
 
-
     Private Sub ChoixPlat_VisibleChanged(sender As Object, e As EventArgs) Handles MyBase.VisibleChanged
         InitialiserPlats()
     End Sub

@@ -108,10 +108,10 @@
     <Compile Include="Composants\Note.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Composants\Plat.Designer.vb">
-      <DependentUpon>Plat.vb</DependentUpon>
+    <Compile Include="Composants\PnlPlat.Designer.vb">
+      <DependentUpon>PnlPlat.vb</DependentUpon>
     </Compile>
-    <Compile Include="Composants\Plat.vb">
+    <Compile Include="Composants\PnlPlat.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="DataSet1.Designer.vb">
@@ -186,8 +186,8 @@
     <EmbeddedResource Include="Composants\Note.resx">
       <DependentUpon>Note.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Composants\Plat.resx">
-      <DependentUpon>Plat.vb</DependentUpon>
+    <EmbeddedResource Include="Composants\PnlPlat.resx">
+      <DependentUpon>PnlPlat.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdmin.resx">
       <DependentUpon>FrmAdmin.vb</DependentUpon>

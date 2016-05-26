@@ -13,11 +13,11 @@ Module ModAliments
         End While
     End Sub
 
-    Public Sub RechercherAliments(ByVal recherche As String)
+    Public Sub RechercherAliments(ByVal paramRecherche As String)
         Dim strRequete As String
         Dim reader_Sql As OracleDataReader
         listeAliments = New List(Of String)
-        strRequete = "SELECT * FROM vw_aliments WHERE LOWER(Aliment) LIKE LOWER('" + recherche + "%') ORDER BY Aliment"
+        strRequete = "SELECT * FROM vw_aliments WHERE LOWER(Aliment) LIKE LOWER('" + paramRecherche + "%') ORDER BY Aliment"
         do_sql(strRequete, reader_Sql)
         While (reader_Sql.Read)
             listeAliments.Add(reader_Sql.Item(0))

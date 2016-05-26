@@ -38,7 +38,7 @@ Partial Class ChoixPlat
         Me.plaPlat1.Name = "plaPlat1"
         Me.plaPlat1.Note = 0
         Me.plaPlat1.Origine = "Origine"
-        Me.plaPlat1.Plat = ""
+        Me.plaPlat1.NomPlat = ""
         Me.plaPlat1.Size = New System.Drawing.Size(279, 103)
         Me.plaPlat1.TabIndex = 0
         '
@@ -52,7 +52,7 @@ Partial Class ChoixPlat
         Me.plaPlat2.Name = "plaPlat2"
         Me.plaPlat2.Note = 0
         Me.plaPlat2.Origine = "Origine"
-        Me.plaPlat2.Plat = ""
+        Me.plaPlat2.NomPlat = ""
         Me.plaPlat2.Size = New System.Drawing.Size(279, 103)
         Me.plaPlat2.TabIndex = 1
         '
@@ -66,7 +66,7 @@ Partial Class ChoixPlat
         Me.plaPlat3.Name = "plaPlat3"
         Me.plaPlat3.Note = 0
         Me.plaPlat3.Origine = "Origine"
-        Me.plaPlat3.Plat = ""
+        Me.plaPlat3.NomPlat = ""
         Me.plaPlat3.Size = New System.Drawing.Size(279, 103)
         Me.plaPlat3.TabIndex = 2
         '
@@ -80,7 +80,7 @@ Partial Class ChoixPlat
         Me.plaPlat4.Name = "plaPlat4"
         Me.plaPlat4.Note = 0
         Me.plaPlat4.Origine = "Origine"
-        Me.plaPlat4.Plat = ""
+        Me.plaPlat4.NomPlat = ""
         Me.plaPlat4.Size = New System.Drawing.Size(279, 103)
         Me.plaPlat4.TabIndex = 3
         '

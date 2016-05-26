@@ -5,17 +5,18 @@ Public Class FrmPrincipale
     Const FRM_HEIGHT = 600
     Const FRM_WIDTH = 560
 
-    Dim propositions As Collection = New Collection
     Dim noteAjouter As Integer = 0
     Dim noteNoter As Integer = 0
 
     Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tbcTabController.SelectedIndexChanged
-        If (tbcTabController.SelectedTab.Name = "tabPlanifier") Then
+        If tbcTabController.SelectedTab.Name = "tabPlanifier" Then
             Me.Height += 150
             Me.Width += 100
         Else
-            If (tbcTabController.SelectedTab.Name = "tabNoter") Then
+            If tbcTabController.SelectedTab.Name = "tabNoter" Then
                 AfficherANoter()
+            ElseIf tbcTabController.SelectedTab.Name = "tabAjouter"
+                initTabAjouter()
             End If
             Me.Height = FRM_HEIGHT
             Me.Width = FRM_WIDTH
@@ -37,52 +38,7 @@ Public Class FrmPrincipale
 
         datNoterJour.MaxDate = Date.Now
 
-        'Ajout du panel à la collection
-        propositions.Add(pnlProposition1)
-        propositions.Add(pnlProposition2)
-        propositions.Add(pnlProposition3)
-        propositions.Add(pnlProposition4)
-
         AfficherPropositionJour()
-    End Sub
-
-
-    Private Sub pnlProposition1_MouseEnter(sender As Object, e As EventArgs) Handles pnlProposition4.MouseEnter, pnlProposition3.MouseEnter, pnlProposition2.MouseEnter, pnlProposition1.MouseEnter
-        If sender.BackColor <> Color.LightGreen Then
-            sender.BackColor = Color.LightGray
-        End If
-    End Sub
-
-    Private Sub pnlProposition1_MouseLeave(sender As Object, e As EventArgs) Handles pnlProposition4.MouseLeave, pnlProposition3.MouseLeave, pnlProposition2.MouseLeave, pnlProposition1.MouseLeave
-        If sender.BackColor = Color.LightGray Then
-            sender.BackColor = Color.White
-        End If
-    End Sub
-
-    Private Sub pnlProposition1_MouseClick(sender As Object, e As MouseEventArgs) Handles pnlProposition4.MouseClick, pnlProposition3.MouseClick, pnlProposition2.MouseClick, pnlProposition1.MouseClick
-        For i As Integer = 1 To propositions.Count()
-            propositions(i).BackColor = Color.White()
-        Next
-        sender.BackColor = Color.LightGreen
-    End Sub
-
-    Private Sub lblProposition4Aliments_MouseEnter(sender As Object, e As EventArgs) Handles picProposition4Etoile5.MouseEnter, picProposition4Etoile4.MouseEnter, picProposition4Etoile3.MouseEnter, picProposition4Etoile2.MouseEnter, picProposition4Etoile1.MouseEnter, picProposition3Etoile5.MouseEnter, picProposition3Etoile4.MouseEnter, picProposition3Etoile3.MouseEnter, picProposition3Etoile2.MouseEnter, picProposition3Etoile1.MouseEnter, picProposition2Etoile5.MouseEnter, picProposition2Etoile4.MouseEnter, picProposition2Etoile3.MouseEnter, picProposition2Etoile2.MouseEnter, picProposition2Etoile1.MouseEnter, picProposition1Etoile5.MouseEnter, picProposition1Etoile4.MouseEnter, picProposition1Etoile3.MouseEnter, picProposition1Etoile2.MouseEnter, picProposition1Etoile1.MouseEnter, lblProposition4Plat.MouseEnter, lblProposition4Origine.MouseEnter, lblProposition4Note.MouseEnter, lblProposition4Aliments.MouseEnter, lblProposition3Plat.MouseEnter, lblProposition3Origine.MouseEnter, lblProposition3Note.MouseEnter, lblProposition3Aliments.MouseEnter, lblProposition2Plat.MouseEnter, lblProposition2Origine.MouseEnter, lblProposition2Note.MouseEnter, lblProposition2Aliments.MouseEnter, lblProposition1Plat.MouseEnter, lblProposition1Origine.MouseEnter, lblProposition1Note.MouseEnter, lblProposition1Aliments.MouseEnter
-        If sender.Parent.BackColor <> Color.LightGreen Then
-            sender.Parent.BackColor = Color.LightGray
-        End If
-    End Sub
-
-    Private Sub lblProposition4Aliments_MouseLeave(sender As Object, e As EventArgs) Handles picProposition4Etoile5.MouseLeave, picProposition4Etoile4.MouseLeave, picProposition4Etoile3.MouseLeave, picProposition4Etoile2.MouseLeave, picProposition4Etoile1.MouseLeave, picProposition3Etoile5.MouseLeave, picProposition3Etoile4.MouseLeave, picProposition3Etoile3.MouseLeave, picProposition3Etoile2.MouseLeave, picProposition3Etoile1.MouseLeave, picProposition2Etoile5.MouseLeave, picProposition2Etoile4.MouseLeave, picProposition2Etoile3.MouseLeave, picProposition2Etoile2.MouseLeave, picProposition2Etoile1.MouseLeave, picProposition1Etoile5.MouseLeave, picProposition1Etoile4.MouseLeave, picProposition1Etoile3.MouseLeave, picProposition1Etoile2.MouseLeave, picProposition1Etoile1.MouseLeave, lblProposition4Plat.MouseLeave, lblProposition4Origine.MouseLeave, lblProposition4Note.MouseLeave, lblProposition4Aliments.MouseLeave, lblProposition3Plat.MouseLeave, lblProposition3Origine.MouseLeave, lblProposition3Note.MouseLeave, lblProposition3Aliments.MouseLeave, lblProposition2Plat.MouseLeave, lblProposition2Origine.MouseLeave, lblProposition2Note.MouseLeave, lblProposition2Aliments.MouseLeave, lblProposition1Plat.MouseLeave, lblProposition1Origine.MouseLeave, lblProposition1Note.MouseLeave, lblProposition1Aliments.MouseLeave
-        If sender.Parent.BackColor = Color.LightGray Then
-            sender.Parent.BackColor = Color.White
-        End If
-    End Sub
-
-    Private Sub lblProposition4Aliments_MouseClick(sender As Object, e As MouseEventArgs) Handles picProposition4Etoile5.MouseClick, picProposition4Etoile4.MouseClick, picProposition4Etoile3.MouseClick, picProposition4Etoile2.MouseClick, picProposition4Etoile1.MouseClick, picProposition3Etoile5.MouseClick, picProposition3Etoile4.MouseClick, picProposition3Etoile3.MouseClick, picProposition3Etoile2.MouseClick, picProposition3Etoile1.MouseClick, picProposition2Etoile5.MouseClick, picProposition2Etoile4.MouseClick, picProposition2Etoile3.MouseClick, picProposition2Etoile2.MouseClick, picProposition2Etoile1.MouseClick, picProposition1Etoile5.MouseClick, picProposition1Etoile4.MouseClick, picProposition1Etoile3.MouseClick, picProposition1Etoile2.MouseClick, picProposition1Etoile1.MouseClick, lblProposition4Plat.MouseClick, lblProposition4Origine.MouseClick, lblProposition4Note.MouseClick, lblProposition4Aliments.MouseClick, lblProposition3Plat.MouseClick, lblProposition3Origine.MouseClick, lblProposition3Note.MouseClick, lblProposition3Aliments.MouseClick, lblProposition2Plat.MouseClick, lblProposition2Origine.MouseClick, lblProposition2Note.MouseClick, lblProposition2Aliments.MouseClick, lblProposition1Plat.MouseClick, lblProposition1Origine.MouseClick, lblProposition1Note.MouseClick, lblProposition1Aliments.MouseClick
-        For i As Integer = 1 To propositions.Count()
-            propositions(i).BackColor = Color.White()
-        Next
-        sender.Parent.BackColor = Color.LightGreen
     End Sub
 
     Private Sub mnuDeconnexion_Click(sender As Object, e As EventArgs) Handles mnuDeconnexion.Click
@@ -109,10 +65,7 @@ Public Class FrmPrincipale
 
     'Affiche la proposition du jour
     Private Sub AfficherPropositionJour()
-        Dim platPropose As Plat = PropositionDuJour()
-        plaPropositionJour.Plat = platPropose.GetNomPlat()
-        plaPropositionJour.Origine = platPropose.GetOrigine()
-        plaPropositionJour.Note = platPropose.GetNoteMoyenne()
+        plaPropositionJour.Plat = PropositionDuJour()
     End Sub
 
     'Affiche le plat à noter
@@ -121,10 +74,23 @@ Public Class FrmPrincipale
         moment = If(optMidi.Checked, "m", "s")
         dateChoise = datNoterJour.Value
         repasCourant = recupUnRepas(dateChoise, moment)
-        PlaNoter.Plat = If(IsNothing(repasCourant), "Date invalide", repasCourant.GetNomPlat)
-        PlaNoter.Origine = If(IsNothing(repasCourant), "Pas de repas enregistré à ce moment", repasCourant.GetOrigine)
-        PlaNoter.Note = If(IsNothing(repasCourant), 0, repasCourant.GetNoteMoyenne())
+        If IsNothing(repasCourant) Then
+            PlaNoter.NomPlat = "Date invalide"
+            PlaNoter.Origine = "Pas de repas enregistré à ce moment"
+            PlaNoter.Note = 0
+        Else
+            PlaNoter.Plat = repasCourant
+        End If
         cmdEnregistrerNote.Enabled = Not IsNothing(repasCourant)
+    End Sub
+
+    Private Sub initTabAjouter()
+        'S'il est passé 12h59 l'option soir est automatiquement cochée
+        If Date.Now.Hour > 12 Then
+            optAjouterSoir.Select()
+        Else
+            optAjouterMidi.Select()
+        End If
     End Sub
 
     Private Sub datNoterJour_ValueChanged(sender As Object, e As EventArgs) Handles datNoterJour.ValueChanged
@@ -133,5 +99,9 @@ Public Class FrmPrincipale
 
     Private Sub optSoir_CheckedChanged(sender As Object, e As EventArgs) Handles optSoir.CheckedChanged
         AfficherANoter()
+    End Sub
+
+    Private Sub cmdEnregistrerAjouter_Click(sender As Object, e As EventArgs) Handles cmdEnregistrerAjouter.Click
+
     End Sub
 End Class

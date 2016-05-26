@@ -53,6 +53,10 @@ Public Class Plat
         Return alimentsString
     End Function
 
+    Public Overrides Function Equals(ByVal paramPlat As Object) As Boolean
+        Return Me.nomPlat.Equals(paramPlat.GetNomPlat)
+    End Function
+
     Public Function RecupAlimentsPlat() As List(Of String)
         Dim strRequete As String
         Dim reader_Sql As OracleDataReader

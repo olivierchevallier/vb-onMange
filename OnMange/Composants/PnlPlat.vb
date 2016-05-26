@@ -3,13 +3,26 @@ Public Class PnlPlat
     Inherits System.Windows.Forms.UserControl
 
     Private intNote As Integer
+    Private platPlat As Plat
 
-    Property Plat() As String
+    Property Plat() As Plat
+        Get
+            Return platPlat
+        End Get
+        Set(ByVal Value As Plat)
+            platPlat = Value
+            If Not IsNothing(platPlat) Then
+                afficherPlat()
+            End If
+        End Set
+    End Property
+
+    Property NomPlat As String
         Get
             Return lblPlat.Text
         End Get
-        Set(ByVal Value As String)
-            lblPlat.Text = Value
+        Set(value As String)
+            lblPlat.Text = lblPlat.Text
             Centrer(lblPlat)
         End Set
     End Property
@@ -32,6 +45,14 @@ Public Class PnlPlat
             notPlat.Note = Value
         End Set
     End Property
+
+    Private Sub afficherPlat()
+        lblOrigine.Text = platPlat.GetOrigine()
+        lblPlat.Text = platPlat.GetNomPlat()
+        notPlat.Note = platPlat.GetNoteMoyenne()
+        Centrer(lblPlat)
+        Centrer(lblOrigine)
+    End Sub
 
     Private Sub Centrer(ByRef aCentrer As Control)
         aCentrer.Location = New Point(((Width - aCentrer.Width) / 2), aCentrer.Location.Y)
