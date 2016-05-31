@@ -73,6 +73,7 @@ Partial Class FrmAjouterAliment
         'btnAjouter
         '
         Me.btnAjouter.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnAjouter.Enabled = False
         Me.btnAjouter.Location = New System.Drawing.Point(151, 227)
         Me.btnAjouter.Name = "btnAjouter"
         Me.btnAjouter.Size = New System.Drawing.Size(75, 23)

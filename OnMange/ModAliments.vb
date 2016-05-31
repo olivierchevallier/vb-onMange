@@ -23,4 +23,13 @@ Module ModAliments
             listeAliments.Add(reader_Sql.Item(0))
         End While
     End Sub
+
+    Public Function ExisteDansLaListe(aliment As String) As Boolean
+        For i = 0 To listeAliments.Count - 1
+            If listeAliments(i).ToString = aliment Then
+                Return True
+            End If
+        Next
+        Return False
+    End Function
 End Module
