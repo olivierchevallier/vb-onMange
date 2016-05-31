@@ -34,7 +34,7 @@ Public Class FrmPrincipale
             Me.Close()
             Exit Sub
         End If
-        mnuDeconnexion.Text += " (" + membreActif.ToString + ")"
+        InitMembre()
 
         datNoterJour.MaxDate = Date.Now
         AfficherPropositionJour()
@@ -100,7 +100,9 @@ Public Class FrmPrincipale
         AfficherANoter()
     End Sub
 
-    Private Sub cmdEnregistrerAjouter_Click(sender As Object, e As EventArgs) Handles cmdEnregistrerAjouter.Click
-
+    'initialisations de l'interface en fonction du membre connecté
+    Private Sub InitMembre()
+        mnuDeconnexion.Text += " (" + membreActif.ToString + ")"
+        tabAjouter.Enabled = membreActif.isAdder()
     End Sub
 End Class
