@@ -96,6 +96,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aliment.vb" />
     <Compile Include="Composants\ChoixPlat.Designer.vb">
       <DependentUpon>ChoixPlat.vb</DependentUpon>
     </Compile>
@@ -156,6 +157,7 @@
     <Compile Include="GestionConnexion.vb" />
     <Compile Include="GestionNote.vb" />
     <Compile Include="Membre.vb" />
+    <Compile Include="ModAjoutRepas.vb" />
     <Compile Include="ModAliments.vb" />
     <Compile Include="ModBDD.vb" />
     <Compile Include="ModMembres.vb" />

@@ -105,4 +105,8 @@ Public Class FrmPrincipale
         mnuDeconnexion.Text += " (" + membreActif.ToString + ")"
         tabAjouter.Enabled = membreActif.isAdder()
     End Sub
+
+    Public Sub afficherAlimentsAjouter()
+        txtAlimentsPrincipaux.Text = strAlimentsRepas
+    End Sub
 End Class

@@ -13,7 +13,7 @@
         RechercherAliments(Trim(txtRechercher.Text))
         AfficherAliments()
         NouvelAliment()
-        lstAliments.SelectedIndex() = 0
+        If lstAliments.Items.Count > 0 Then lstAliments.SelectedIndex() = 0
     End Sub
 
     Private Sub AfficherAliments()
@@ -24,7 +24,14 @@
     End Sub
 
     Private Sub lstAliments_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstAliments.SelectedIndexChanged
-        btnAjouter.Enabled = lstAliments.SelectedIndices.Count > 0
+        If lstAliments.SelectedIndices.Count > 0 And lstAliments.SelectedIndex >= listeAliments.Count Then
+            btnAjouter.Enabled = True
+        ElseIf lstAliments.SelectedIndices.Count > 0 And Not listeAlimentsRepas.Contains(listeAliments(lstAliments.SelectedIndex)) Then
+            btnAjouter.Enabled = True
+        Else
+            btnAjouter.Enabled = False
+        End If
+        'btnAjouter.Enabled = lstAliments.SelectedIndices.Count > 0 And Not listeAlimentsRepas.Contains(listeAliments(lstAliments.SelectedIndex))
     End Sub
 
     Private Sub NouvelAliment()
@@ -33,5 +40,19 @@
         If txtRechercher.Text <> "" And Not ExisteDansLaListe(aliment) Then
             lstAliments.Items.Add("Nouvel aliment : " + aliment)
         End If
+    End Sub
+
+    Private Sub btnAjouter_Click(sender As Object, e As EventArgs) Handles btnAjouter.Click
+        Dim aliment As String, index As Integer
+        If listeAliments.Count < 1 Then
+            Aliment = StrConv(txtRechercher.Text, VbStrConv.ProperCase)
+            ajouterAliment(aliment)
+            RechercherAliments(Trim(txtRechercher.Text))
+        End If
+        index = If(lstAliments.SelectedIndex > 0, lstAliments.SelectedIndex, 0)
+        listeAlimentsRepas.Add(listeAliments(index))
+        ConvertirAlimentsString()
+        FrmPrincipale.afficherAlimentsAjouter()
+        AfficherAliments()
     End Sub
 End Class

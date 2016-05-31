@@ -4,7 +4,7 @@ Public Class Plat
     Private origine As String
     Private mangeLe As Date
     Private noteMoyenne As Double
-    Private aliments As New List(Of String)
+    Private aliments As New List(Of Aliment)
 
     Public Sub New(ByVal nomPlat As String, ByVal origine As String, ByVal mangeLe As Date, ByVal noteMoyenne As Double)
         Me.nomPlat = nomPlat
@@ -30,7 +30,7 @@ Public Class Plat
         Return mangeLe
     End Function
 
-    Public Function getAliments() As List(Of String)
+    Public Function getAliments() As List(Of Aliment)
         Return aliments
     End Function
 
@@ -46,9 +46,9 @@ Public Class Plat
 
     Public Function GetAlimentsString() As String
         Dim alimentsString As String
-        alimentsString = aliments(0)
+        alimentsString = aliments(0).ToString
         For i = 1 To aliments.Count - 1
-            alimentsString += ", " + aliments(i)
+            alimentsString += ", " + aliments(i).ToString
         Next
         Return alimentsString
     End Function
@@ -57,18 +57,19 @@ Public Class Plat
         Return Me.nomPlat.Equals(paramPlat.GetNomPlat)
     End Function
 
-    Public Function RecupAlimentsPlat() As List(Of String)
+    Public Function RecupAlimentsPlat() As List(Of Aliment)
         Dim strRequete As String
         Dim reader_Sql As OracleDataReader
         Dim i = 0
-        Dim listeAliments As New List(Of String)
-        strRequete = "SELECT aliment FROM vw_composants WHERE plat = '" + nomPlat + "'"
+        Dim listeAliments As New List(Of Aliment)
+        strRequete = "SELECT identifiant, aliment FROM vw_composants WHERE plat = '" + nomPlat + "'"
         do_sql(strRequete, reader_Sql)
         While (reader_Sql.Read)
             If IsDBNull(reader_Sql.Item(0)) Then
-                listeAliments.Add("")
+                Dim aliment As New Aliment(0, "")
             Else
-                listeAliments.Add(reader_Sql.Item(0))
+                Dim aliment As New Aliment(reader_Sql.Item(0), reader_Sql.Item(1))
+                listeAliments.Add(aliment)
             End If
         End While
         Return listeAliments

@@ -41,8 +41,8 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON vw_repas TO onMange_user;
 -- -----------------------------------------------------
 -- Affichage des aliments
 -- -----------------------------------------------------
-CREATE OR REPLACE VIEW vw_aliments (Aliment) AS
-       SELECT INITCAP(ali_nom)
+CREATE OR REPLACE VIEW vw_aliments (Identifant, Aliment) AS
+       SELECT ali_no, INITCAP(ali_nom)
        FROM onm_aliment;
 
 GRANT SELECT, INSERT, UPDATE, DELETE ON vw_aliments TO onMange_user;
@@ -50,8 +50,8 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON vw_aliments TO onMange_user;
 -- -----------------------------------------------------
 -- Affichage des composants de plats (pour être utilisé avec WHERE plat = x)
 -- -----------------------------------------------------
-CREATE OR REPLACE VIEW vw_composants (Plat, Aliment) AS
-       SELECT INITCAP(pla_nom), INITCAP(ali_nom)
+CREATE OR REPLACE VIEW vw_composants (Identifiant, Plat, Aliment) AS
+       SELECT ali_no, INITCAP(pla_nom), INITCAP(ali_nom)
        FROM onm_compose
        JOIN onm_aliment ON com_ali_no = ali_no
        RIGHT JOIN onm_plat ON com_pla_no = pla_no;
