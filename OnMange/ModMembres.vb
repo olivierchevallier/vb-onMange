@@ -1,6 +1,6 @@
 ﻿Imports System.Data.OracleClient
 Module ModMembres
-    Public membreActif As Membre
+    Public membreActif As Membre = Nothing
     Public listeMembres As New List(Of Membre)
 
     Public Sub RecupMemebres()

@@ -30,14 +30,13 @@ Public Class FrmPrincipale
     Private Sub FrmPrincipale_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Gestion du login
         FrmLogin.ShowDialog(Me)
-        If isConnected() Then
-            mnuDeconnexion.Text += " (" + membreActif.ToString + ")"
-        Else
+        If Not isConnected() Then
             Me.Close()
+            Exit Sub
         End If
+        mnuDeconnexion.Text += " (" + membreActif.ToString + ")"
 
         datNoterJour.MaxDate = Date.Now
-
         AfficherPropositionJour()
     End Sub
 

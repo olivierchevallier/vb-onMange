@@ -24,11 +24,11 @@ Partial Class FrmLogin
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmLogin))
-        Dim ListViewItem6 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Romain", 0)
-        Dim ListViewItem7 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Ophélie", 0)
-        Dim ListViewItem8 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Olivier", 0)
-        Dim ListViewItem9 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Clothilde", 0)
-        Dim ListViewItem10 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Benoît", 0)
+        Dim ListViewItem1 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Romain", 0)
+        Dim ListViewItem2 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Ophélie", 0)
+        Dim ListViewItem3 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Olivier", 0)
+        Dim ListViewItem4 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Clothilde", 0)
+        Dim ListViewItem5 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Benoît", 0)
         Me.picManger = New System.Windows.Forms.PictureBox()
         Me.lblLoginTitre = New System.Windows.Forms.Label()
         Me.imgLstUtilisateurs = New System.Windows.Forms.ImageList(Me.components)
@@ -74,7 +74,7 @@ Partial Class FrmLogin
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lstUtilisateurs.BackColor = System.Drawing.Color.White
         Me.lstUtilisateurs.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lstUtilisateurs.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem6, ListViewItem7, ListViewItem8, ListViewItem9, ListViewItem10})
+        Me.lstUtilisateurs.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1, ListViewItem2, ListViewItem3, ListViewItem4, ListViewItem5})
         Me.lstUtilisateurs.LargeImageList = Me.imgLstUtilisateurs
         Me.lstUtilisateurs.Location = New System.Drawing.Point(12, 173)
         Me.lstUtilisateurs.MultiSelect = False
