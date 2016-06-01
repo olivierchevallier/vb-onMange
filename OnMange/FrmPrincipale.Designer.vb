@@ -31,10 +31,8 @@ Partial Class FrmPrincipale
         Me.lblPropositionJour = New System.Windows.Forms.Label()
         Me.lblMangerTitre = New System.Windows.Forms.Label()
         Me.tabAjouter = New System.Windows.Forms.TabPage()
-        Me.Note1 = New OnMange.Note()
         Me.lblOu = New System.Windows.Forms.Label()
         Me.btnPlatExistant = New System.Windows.Forms.Button()
-        Me.lblAjouterNoteP = New System.Windows.Forms.Label()
         Me.cmdEnregistrerAjouter = New System.Windows.Forms.Button()
         Me.cmdAjouterAliment = New System.Windows.Forms.Button()
         Me.cboAjouterOrigine = New System.Windows.Forms.ComboBox()
@@ -67,7 +65,6 @@ Partial Class FrmPrincipale
         Me.mnuPrincipalStrip = New System.Windows.Forms.MenuStrip()
         Me.mnuAdministration = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuDeconnexion = New System.Windows.Forms.ToolStripMenuItem()
-        Me.VW_UTILISATEURSTableAdapter1 = New OnMange.DataSet1TableAdapters.VW_UTILISATEURSTableAdapter()
         Me.tbcTabController.SuspendLayout()
         Me.tabManger.SuspendLayout()
         CType(Me.picManger, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -174,10 +171,8 @@ Partial Class FrmPrincipale
         '
         'tabAjouter
         '
-        Me.tabAjouter.Controls.Add(Me.Note1)
         Me.tabAjouter.Controls.Add(Me.lblOu)
         Me.tabAjouter.Controls.Add(Me.btnPlatExistant)
-        Me.tabAjouter.Controls.Add(Me.lblAjouterNoteP)
         Me.tabAjouter.Controls.Add(Me.cmdEnregistrerAjouter)
         Me.tabAjouter.Controls.Add(Me.cmdAjouterAliment)
         Me.tabAjouter.Controls.Add(Me.cboAjouterOrigine)
@@ -198,22 +193,10 @@ Partial Class FrmPrincipale
         Me.tabAjouter.Text = "Ajouter"
         Me.tabAjouter.UseVisualStyleBackColor = True
         '
-        'Note1
-        '
-        Me.Note1.BackColor = System.Drawing.Color.Transparent
-        Me.Note1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.Note1.LectureSeule = False
-        Me.Note1.Location = New System.Drawing.Point(264, 374)
-        Me.Note1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Note1.Name = "Note1"
-        Me.Note1.Note = 1
-        Me.Note1.Size = New System.Drawing.Size(136, 22)
-        Me.Note1.TabIndex = 37
-        '
         'lblOu
         '
         Me.lblOu.AutoSize = True
-        Me.lblOu.Location = New System.Drawing.Point(241, 219)
+        Me.lblOu.Location = New System.Drawing.Point(241, 227)
         Me.lblOu.Name = "lblOu"
         Me.lblOu.Size = New System.Drawing.Size(30, 20)
         Me.lblOu.TabIndex = 36
@@ -227,16 +210,6 @@ Partial Class FrmPrincipale
         Me.btnPlatExistant.TabIndex = 35
         Me.btnPlatExistant.Text = "&Choisir dans l'historique"
         Me.btnPlatExistant.UseVisualStyleBackColor = True
-        '
-        'lblAjouterNoteP
-        '
-        Me.lblAjouterNoteP.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.lblAjouterNoteP.AutoSize = True
-        Me.lblAjouterNoteP.Location = New System.Drawing.Point(113, 374)
-        Me.lblAjouterNoteP.Name = "lblAjouterNoteP"
-        Me.lblAjouterNoteP.Size = New System.Drawing.Size(43, 20)
-        Me.lblAjouterNoteP.TabIndex = 28
-        Me.lblAjouterNoteP.Text = "&Note"
         '
         'cmdEnregistrerAjouter
         '
@@ -252,7 +225,7 @@ Partial Class FrmPrincipale
         'cmdAjouterAliment
         '
         Me.cmdAjouterAliment.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.cmdAjouterAliment.Location = New System.Drawing.Point(406, 289)
+        Me.cmdAjouterAliment.Location = New System.Drawing.Point(406, 305)
         Me.cmdAjouterAliment.Name = "cmdAjouterAliment"
         Me.cmdAjouterAliment.Size = New System.Drawing.Size(31, 27)
         Me.cmdAjouterAliment.TabIndex = 7
@@ -265,7 +238,7 @@ Partial Class FrmPrincipale
         Me.cboAjouterOrigine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboAjouterOrigine.FormattingEnabled = True
         Me.cboAjouterOrigine.Items.AddRange(New Object() {"Europe", "Amérique du Nord", "Amérique du Sud", "Asie", "Afrique", "Océanie"})
-        Me.cboAjouterOrigine.Location = New System.Drawing.Point(264, 332)
+        Me.cboAjouterOrigine.Location = New System.Drawing.Point(264, 348)
         Me.cboAjouterOrigine.Name = "cboAjouterOrigine"
         Me.cboAjouterOrigine.Size = New System.Drawing.Size(136, 28)
         Me.cboAjouterOrigine.TabIndex = 9
@@ -273,7 +246,7 @@ Partial Class FrmPrincipale
         'txtAlimentsPrincipaux
         '
         Me.txtAlimentsPrincipaux.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.txtAlimentsPrincipaux.Location = New System.Drawing.Point(264, 289)
+        Me.txtAlimentsPrincipaux.Location = New System.Drawing.Point(264, 305)
         Me.txtAlimentsPrincipaux.Name = "txtAlimentsPrincipaux"
         Me.txtAlimentsPrincipaux.Size = New System.Drawing.Size(136, 26)
         Me.txtAlimentsPrincipaux.TabIndex = 6
@@ -281,7 +254,7 @@ Partial Class FrmPrincipale
         'txtPlat
         '
         Me.txtPlat.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.txtPlat.Location = New System.Drawing.Point(264, 248)
+        Me.txtPlat.Location = New System.Drawing.Point(264, 264)
         Me.txtPlat.Name = "txtPlat"
         Me.txtPlat.Size = New System.Drawing.Size(136, 26)
         Me.txtPlat.TabIndex = 4
@@ -290,7 +263,7 @@ Partial Class FrmPrincipale
         '
         Me.lblAjouterOrigine.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lblAjouterOrigine.AutoSize = True
-        Me.lblAjouterOrigine.Location = New System.Drawing.Point(113, 335)
+        Me.lblAjouterOrigine.Location = New System.Drawing.Point(113, 351)
         Me.lblAjouterOrigine.Name = "lblAjouterOrigine"
         Me.lblAjouterOrigine.Size = New System.Drawing.Size(59, 20)
         Me.lblAjouterOrigine.TabIndex = 8
@@ -300,7 +273,7 @@ Partial Class FrmPrincipale
         '
         Me.lblAjouterAliments.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lblAjouterAliments.AutoSize = True
-        Me.lblAjouterAliments.Location = New System.Drawing.Point(113, 292)
+        Me.lblAjouterAliments.Location = New System.Drawing.Point(113, 308)
         Me.lblAjouterAliments.Name = "lblAjouterAliments"
         Me.lblAjouterAliments.Size = New System.Drawing.Size(145, 20)
         Me.lblAjouterAliments.TabIndex = 5
@@ -310,7 +283,7 @@ Partial Class FrmPrincipale
         '
         Me.lblAjouterPlat.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lblAjouterPlat.AutoSize = True
-        Me.lblAjouterPlat.Location = New System.Drawing.Point(113, 251)
+        Me.lblAjouterPlat.Location = New System.Drawing.Point(113, 267)
         Me.lblAjouterPlat.Name = "lblAjouterPlat"
         Me.lblAjouterPlat.Size = New System.Drawing.Size(36, 20)
         Me.lblAjouterPlat.TabIndex = 3
@@ -579,7 +552,6 @@ Partial Class FrmPrincipale
         '
         'VW_UTILISATEURSTableAdapter1
         '
-        Me.VW_UTILISATEURSTableAdapter1.ClearBeforeFill = True
         '
         'FrmPrincipale
         '
@@ -647,16 +619,13 @@ Partial Class FrmPrincipale
     Friend WithEvents mnuPrincipalStrip As MenuStrip
     Friend WithEvents mnuDeconnexion As ToolStripMenuItem
     Friend WithEvents mnuAdministration As ToolStripMenuItem
-    Friend WithEvents lblAjouterNoteP As Label
     Friend WithEvents optSoir As RadioButton
     Friend WithEvents optMidi As RadioButton
     Friend WithEvents datNoterJour As DateTimePicker
     Friend WithEvents lblOu As Label
     Friend WithEvents btnPlatExistant As Button
-    Friend WithEvents VW_UTILISATEURSTableAdapter1 As DataSet1TableAdapters.VW_UTILISATEURSTableAdapter
     Friend WithEvents plaPropositionJour As PnlPlat
     Friend WithEvents PlaNoter As PnlPlat
     Friend WithEvents notNotePerso As Note
-    Friend WithEvents Note1 As Note
     Friend WithEvents chplaPlanifier As ChoixPlat
 End Class

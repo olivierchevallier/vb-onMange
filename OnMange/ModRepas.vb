@@ -16,11 +16,10 @@ Module ModRepas
         Return repasCourant
     End Function
 
-    Public Sub enregistrerRepas(ByVal paramRepas As Repas)
+    Public Sub enregistrerRepas(paramMoment As String, paramDate As Date, paramPlat As Plat)
         Dim strRequete As String
-        Dim i As Integer
-        For i = 0 To listePlats.Count
-
-        Next
+        Dim reader_Sql As OracleDataReader
+        strRequete = "INSERT INTO vw_onm_repas VALUES(NULL, '" + paramMoment + "', to_date('" + paramDate.Date + "', 'DD/MM/YYYY'), " + CStr(paramPlat.getIdentifiant()) + ")"
+        do_sql(strRequete, reader_Sql)
     End Sub
 End Module

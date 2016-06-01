@@ -136,4 +136,14 @@ Public Class FrmPrincipale
     Private Sub cboAjouterOrigine_TextChanged(sender As Object, e As EventArgs) Handles cboAjouterOrigine.TextChanged
         gestionBoutonEnregistrer()
     End Sub
+
+    Private Sub cmdEnregistrerAjouter_Click(sender As Object, e As EventArgs) Handles cmdEnregistrerAjouter.Click
+        Dim moment As String
+        moment = If(optAjouterMidi.Checked, "m", "s")
+        If IsNothing(platAjouter) Then
+
+        Else
+            enregistrerRepas(moment, Date.Now, platAjouter)
+        End If
+    End Sub
 End Class
