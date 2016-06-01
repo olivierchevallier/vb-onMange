@@ -60,6 +60,7 @@ Public Class FrmPrincipale
         FrmConsulter.btnChoisir.Visible = False
         FrmConsulter.lblMangerTitre.Text = "Consulter l'historique des repas"
         FrmConsulter.Text = "On Mange ! - Consulter l'historique"
+        txtPlat.Text = nomPlatAjouter
     End Sub
 
     'Affiche la proposition du jour

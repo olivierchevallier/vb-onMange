@@ -1,6 +1,7 @@
 ﻿Module ModAjoutRepas
     Public listeAlimentsRepas As New List(Of Aliment)
     Public strAlimentsRepas As String = ""
+    Public nomPlatAjouter As String
     Public platAjouter As Plat
 
     Public Sub ConvertirAlimentsString()
