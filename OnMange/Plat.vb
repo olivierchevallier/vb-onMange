@@ -1,18 +1,24 @@
 ﻿Imports System.Data.OracleClient
 Public Class Plat
+    Private identifiant As Integer
     Private nomPlat As String
     Private origine As String
     Private mangeLe As Date
     Private noteMoyenne As Double
     Private aliments As New List(Of Aliment)
 
-    Public Sub New(ByVal nomPlat As String, ByVal origine As String, ByVal mangeLe As Date, ByVal noteMoyenne As Double)
+    Public Sub New(identifiant As Integer, nomPlat As String, origine As String, mangeLe As Date, noteMoyenne As Double)
+        Me.identifiant = identifiant
         Me.nomPlat = nomPlat
         Me.origine = origine
         Me.mangeLe = mangeLe
         Me.noteMoyenne = noteMoyenne
         aliments = RecupAlimentsPlat()
     End Sub
+
+    Public Function getIdentifiant() As Integer
+        Return identifiant
+    End Function
 
     Public Function GetNomPlat() As String
         Return nomPlat

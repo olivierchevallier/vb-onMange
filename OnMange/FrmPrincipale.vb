@@ -109,4 +109,17 @@ Public Class FrmPrincipale
     Public Sub afficherAlimentsAjouter()
         txtAlimentsPrincipaux.Text = strAlimentsRepas
     End Sub
+
+    Private Sub txtPlat_TextChanged(sender As Object, e As EventArgs) Handles txtPlat.TextChanged
+        platAjouter = RechercherUnPlat(txtPlat.Text)
+        cmdAjouterAliment.Enabled = IsNothing(platAjouter)
+        cboAjouterOrigine.Enabled = IsNothing(platAjouter)
+        strAlimentsRepas = If(IsNothing(platAjouter), strAlimentsRepas, platAjouter.GetAlimentsString())
+        txtAlimentsPrincipaux.Text = strAlimentsRepas
+        cboAjouterOrigine.Text = If(IsNothing(platAjouter), "", platAjouter.GetOrigine())
+    End Sub
+
+    Private Sub txtAlimentsPrincipaux_TextChanged(sender As Object, e As EventArgs) Handles txtAlimentsPrincipaux.TextChanged
+        txtAlimentsPrincipaux.Text = strAlimentsRepas
+    End Sub
 End Class
