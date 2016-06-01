@@ -206,7 +206,7 @@ Partial Class FrmPrincipale
         Me.Note1.Location = New System.Drawing.Point(264, 374)
         Me.Note1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Note1.Name = "Note1"
-        Me.Note1.Note = 0
+        Me.Note1.Note = 1
         Me.Note1.Size = New System.Drawing.Size(136, 22)
         Me.Note1.TabIndex = 37
         '
@@ -241,6 +241,7 @@ Partial Class FrmPrincipale
         'cmdEnregistrerAjouter
         '
         Me.cmdEnregistrerAjouter.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.cmdEnregistrerAjouter.Enabled = False
         Me.cmdEnregistrerAjouter.Location = New System.Drawing.Point(170, 425)
         Me.cmdEnregistrerAjouter.Name = "cmdEnregistrerAjouter"
         Me.cmdEnregistrerAjouter.Size = New System.Drawing.Size(172, 35)
@@ -261,7 +262,9 @@ Partial Class FrmPrincipale
         'cboAjouterOrigine
         '
         Me.cboAjouterOrigine.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.cboAjouterOrigine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboAjouterOrigine.FormattingEnabled = True
+        Me.cboAjouterOrigine.Items.AddRange(New Object() {"Europe", "Amérique du Nord", "Amérique du Sud", "Asie", "Afrique", "Océanie"})
         Me.cboAjouterOrigine.Location = New System.Drawing.Point(264, 332)
         Me.cboAjouterOrigine.Name = "cboAjouterOrigine"
         Me.cboAjouterOrigine.Size = New System.Drawing.Size(136, 28)

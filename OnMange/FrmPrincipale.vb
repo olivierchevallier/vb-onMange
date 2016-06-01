@@ -116,10 +116,23 @@ Public Class FrmPrincipale
         cboAjouterOrigine.Enabled = IsNothing(platAjouter)
         strAlimentsRepas = If(IsNothing(platAjouter), strAlimentsRepas, platAjouter.GetAlimentsString())
         txtAlimentsPrincipaux.Text = strAlimentsRepas
-        cboAjouterOrigine.Text = If(IsNothing(platAjouter), "", platAjouter.GetOrigine())
+        cboAjouterOrigine.Text = If(IsNothing(platAjouter), cboAjouterOrigine.Text, platAjouter.GetOrigine())
+        gestionBoutonEnregistrer()
     End Sub
 
     Private Sub txtAlimentsPrincipaux_TextChanged(sender As Object, e As EventArgs) Handles txtAlimentsPrincipaux.TextChanged
         txtAlimentsPrincipaux.Text = strAlimentsRepas
+    End Sub
+
+    Private Sub gestionBoutonEnregistrer()
+        cmdEnregistrerAjouter.Enabled = txtPlat.Text <> "" And cboAjouterOrigine.Text <> ""
+    End Sub
+
+    Private Sub cboAjouterOrigine_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboAjouterOrigine.SelectedIndexChanged
+        gestionBoutonEnregistrer()
+    End Sub
+
+    Private Sub cboAjouterOrigine_TextChanged(sender As Object, e As EventArgs) Handles cboAjouterOrigine.TextChanged
+        gestionBoutonEnregistrer()
     End Sub
 End Class
