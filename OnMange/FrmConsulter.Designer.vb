@@ -33,7 +33,6 @@ Partial Class FrmConsulter
         Me.colMangeLe = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colNote = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lblOuPlus = New System.Windows.Forms.Label()
-        Me.cmdRechercher = New System.Windows.Forms.Button()
         Me.cboPasMange = New System.Windows.Forms.ComboBox()
         Me.lblPasMange = New System.Windows.Forms.Label()
         Me.cboMangerOrigine = New System.Windows.Forms.ComboBox()
@@ -142,16 +141,6 @@ Partial Class FrmConsulter
         Me.lblOuPlus.TabIndex = 9
         Me.lblOuPlus.Text = "ou plus"
         '
-        'cmdRechercher
-        '
-        Me.cmdRechercher.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.cmdRechercher.Location = New System.Drawing.Point(295, 524)
-        Me.cmdRechercher.Name = "cmdRechercher"
-        Me.cmdRechercher.Size = New System.Drawing.Size(144, 35)
-        Me.cmdRechercher.TabIndex = 10
-        Me.cmdRechercher.Text = "&Rechercher"
-        Me.cmdRechercher.UseVisualStyleBackColor = True
-        '
         'cboPasMange
         '
         Me.cboPasMange.Anchor = System.Windows.Forms.AnchorStyles.Bottom
@@ -210,12 +199,12 @@ Partial Class FrmConsulter
         '
         'FrmConsulter
         '
+        Me.AcceptButton = Me.btnChoisir
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(734, 571)
         Me.Controls.Add(Me.btnChoisir)
         Me.Controls.Add(Me.lblOuPlus)
-        Me.Controls.Add(Me.cmdRechercher)
         Me.Controls.Add(Me.cboPasMange)
         Me.Controls.Add(Me.lblPasMange)
         Me.Controls.Add(Me.cboMangerOrigine)
@@ -243,7 +232,6 @@ Partial Class FrmConsulter
     Friend WithEvents lblCritere As Label
     Friend WithEvents dgvHistorique As DataGridView
     Friend WithEvents lblOuPlus As Label
-    Friend WithEvents cmdRechercher As Button
     Friend WithEvents cboPasMange As ComboBox
     Friend WithEvents lblPasMange As Label
     Friend WithEvents lblOrigine As Label

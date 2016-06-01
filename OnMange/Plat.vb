@@ -45,11 +45,13 @@ Public Class Plat
     End Function
 
     Public Function GetAlimentsString() As String
-        Dim alimentsString As String
-        alimentsString = aliments(0).ToString
-        For i = 1 To aliments.Count - 1
-            alimentsString += ", " + aliments(i).ToString
-        Next
+        Dim alimentsString As String = ""
+        If aliments.Count > 0 Then
+            alimentsString = aliments(0).ToString
+            For i = 1 To aliments.Count - 1
+                alimentsString += ", " + aliments(i).ToString
+            Next
+        End If
         Return alimentsString
     End Function
 

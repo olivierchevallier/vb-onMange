@@ -14,7 +14,15 @@
         Next
     End Sub
 
-    Private Sub cmdRechercher_Click(sender As Object, e As EventArgs) Handles cmdRechercher.Click
+    Private Sub cboMangerOrigine_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboMangerOrigine.SelectedIndexChanged
+        Rechercher()
+    End Sub
+
+    Private Sub cboPasMange_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboPasMange.SelectedIndexChanged
+        Rechercher()
+    End Sub
+
+    Private Sub Rechercher()
         Dim origine As String, pasMange As Date
         origine = If(IsNothing(cboMangerOrigine.SelectedItem), "", cboMangerOrigine.SelectedItem)
         pasMange = Date.Now

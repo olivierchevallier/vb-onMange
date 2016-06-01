@@ -31,7 +31,6 @@
         Else
             btnAjouter.Enabled = False
         End If
-        'btnAjouter.Enabled = lstAliments.SelectedIndices.Count > 0 And Not listeAlimentsRepas.Contains(listeAliments(lstAliments.SelectedIndex))
     End Sub
 
     Private Sub NouvelAliment()
