@@ -155,14 +155,7 @@ Public Class FrmPrincipale
     End Sub
 
     Private Sub cmdEnregistrerAjouter_Click(sender As Object, e As EventArgs) Handles cmdEnregistrerAjouter.Click
-        Dim moment As String
-        moment = If(optAjouterMidi.Checked, "m", "s")
-        If IsNothing(platAjouter) Then
-            EnregistrerPlat(txtPlat.Text, cboAjouterOrigine.Text)
-            enregistrerRepas(moment, Date.Now)
-        Else
-            enregistrerRepas(moment, Date.Now, platAjouter)
-        End If
+        enregistreRepas(txtPlat.Text, cboAjouterOrigine.Text, If(optAjouterMidi.Checked, "m", "s"))
         gestionBoutonEnregistrer()
     End Sub
 

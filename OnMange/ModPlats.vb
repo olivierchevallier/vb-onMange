@@ -45,12 +45,22 @@ Module ModPlats
         Return platsTrouves
     End Function
 
-    Public Sub EnregistrerPlat(paramNom As String, paramOrigine As String)
+    Public Sub enregistrerPlat(paramNom As String, paramOrigine As String)
         Dim strRequete As String, strSsRequete As String
         Dim reader_Sql As OracleDataReader
         strSsRequete = "SELECT ori_no FROM vw_onm_origine WHERE UPPER(ori_continent) LIKE UPPER('" + paramOrigine + "')"
         strRequete = "INSERT INTO vw_onm_plat VALUES(NULL, '" + paramNom + "', (" + strSsRequete + "))"
         do_sql(strRequete, reader_Sql)
+    End Sub
+
+    'Enregistre les composants du dernier plat ajouté à la base
+    Public Sub enregistrerComposantsPlat(paramAliments As List(Of Aliment))
+        Dim i As Integer, strRequete As String
+        Dim reader_Sql As OracleDataReader
+        For i = 0 To paramAliments.Count - 1
+            strRequete = "INSERT INTO vw_onm_compose VALUES(" + CStr(getLastPlatId()) + ", " + CStr(paramAliments(i).getIdentifiant()) + ")"
+            do_sql(strRequete, reader_Sql)
+        Next
     End Sub
 
     Public Function getLastPlatId() As Integer

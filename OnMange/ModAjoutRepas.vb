@@ -21,4 +21,14 @@ Module ModAjoutRepas
             strAlimentsRepas = ""
         End If
     End Sub
+
+    Public Sub enregistreRepas(paramNomPlat As String, paramOrigine As String, paramMoment As String)
+        If IsNothing(platAjouter) Then
+            enregistrerPlat(paramNomPlat, paramOrigine)
+            enregistrerComposantsPlat(listeAlimentsRepas)
+            enregistrerRepas(paramMoment, Date.Now)
+        Else
+            enregistrerRepas(paramMoment, Date.Now, platAjouter)
+        End If
+    End Sub
 End Module

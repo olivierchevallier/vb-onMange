@@ -10,6 +10,7 @@ Public Class FrmConsulter
     End Sub
 
     Private Sub FrmConsulter_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        RecupPlats()
         afficherPlats(listePlats)
     End Sub
 
