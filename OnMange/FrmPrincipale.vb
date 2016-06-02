@@ -52,6 +52,8 @@ Public Class FrmPrincipale
             Me.Height += 150
             Me.Width += 100
             Me.AcceptButton = cmdEnregistrerVote
+            tbcTabController.SelectedTab.Enabled = False
+            MsgBox("Cette fonctionalité n'est pas implémentée et sera disponible dans une prochaine mise-à-jour.", MsgBoxStyle.OkOnly, "Fonctionnalité indisponible")
         Else
             If tbcTabController.SelectedTab.Name = "tabNoter" Then
                 AfficherANoter()

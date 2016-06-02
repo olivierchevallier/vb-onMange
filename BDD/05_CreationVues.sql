@@ -29,8 +29,8 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON vw_plats TO onMange_user;
 -- -----------------------------------------------------
 -- Affichage des repas
 -- -----------------------------------------------------
-CREATE OR REPLACE VIEW vw_repas (Plat, Origine, Mange_le, Moment, Note_moyenne) AS
-       SELECT INITCAP(pla_nom), INITCAP(ori_continent), rep_date, UPPER(rep_moment), (SELECT Note_moyenne FROM vw_plats WHERE INITCAP(Plat) = INITCAP(pla_nom))
+CREATE OR REPLACE VIEW vw_repas (Identifiant, Plat, Origine, Mange_le, Moment, Note_moyenne) AS
+       SELECT rep_no, INITCAP(pla_nom), INITCAP(ori_continent), rep_date, UPPER(rep_moment), (SELECT Note_moyenne FROM vw_plats WHERE INITCAP(Plat) = INITCAP(pla_nom))
        FROM onm_repas
             LEFT JOIN onm_plat ON rep_pla_no = pla_no
             LEFT JOIN onm_note ON rep_no = not_rep_no

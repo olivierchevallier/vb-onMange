@@ -1,5 +1,5 @@
 ﻿Public Class ChoixPlat
-    Dim plats As Collection = New Collection
+    Dim plaPlats As Collection = New Collection
 
     Private Sub ChoixPlat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         InitialiserPlats()
@@ -10,11 +10,11 @@
     End Sub
 
     Private Sub InitialiserPlats()
-        plats = New Collection
-        plats.Add(plaPlat1)
-        plats.Add(plaPlat2)
-        plats.Add(plaPlat3)
-        plats.Add(plaPlat4)
+        plaPlats = New Collection
+        plaPlats.Add(plaPlat1)
+        plaPlats.Add(plaPlat2)
+        plaPlats.Add(plaPlat3)
+        plaPlats.Add(plaPlat4)
     End Sub
 
     Private Sub plaPlat1_MouseEnter(sender As Object, e As EventArgs) Handles plaPlat4.MouseEnter, plaPlat3.MouseEnter, plaPlat2.MouseEnter, plaPlat1.MouseEnter
@@ -30,8 +30,8 @@
     End Sub
 
     Private Sub plaPlat1_MouseClick(sender As Object, e As MouseEventArgs) Handles plaPlat4.MouseClick, plaPlat3.MouseClick, plaPlat2.MouseClick, plaPlat1.MouseClick
-        For i As Integer = 1 To plats.Count()
-            plats(i).BackColor = Color.White()
+        For i As Integer = 1 To plaPlats.Count()
+            plaPlats(i).BackColor = Color.White()
         Next
         sender.BackColor = Color.LightGreen
     End Sub
