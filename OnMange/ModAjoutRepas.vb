@@ -9,6 +9,16 @@ Module ModAjoutRepas
     Public nomPlatAjouter As String
     Public platAjouter As Plat
 
+    'Effectue toutes les opérations nécessaires au chargement de l'onglet ajouter
+    Public Sub initTabAjouter(ByRef optSoir As RadioButton, ByRef optMidi As RadioButton)
+        'S'il est passé 12h59 l'option soir est automatiquement cochée
+        If Date.Now.Hour > 12 Then
+            optSoir.Select()
+        Else
+            optMidi.Select()
+        End If
+    End Sub
+
     Public Sub ConvertirAlimentsString()
         Dim i As Integer = 1
         If listeAlimentsRepas.Count > 0 Then

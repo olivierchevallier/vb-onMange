@@ -35,16 +35,6 @@ Public Class FrmPrincipale
         End If
     End Sub
 
-    'Effectue toutes les opérations nécessaires au chargement de l'onglet ajouter
-    Private Sub initTabAjouter()
-        'S'il est passé 12h59 l'option soir est automatiquement cochée
-        If Date.Now.Hour > 12 Then
-            optAjouterSoir.Select()
-        Else
-            optAjouterMidi.Select()
-        End If
-    End Sub
-
     'initialisations de l'interface en fonction du membre connecté
     Private Sub InitMembre()
         mnuDeconnexion.Text += " (" + membreActif.ToString + ")"
@@ -67,7 +57,7 @@ Public Class FrmPrincipale
                 AfficherANoter()
                 Me.AcceptButton = cmdEnregistrerNote
             ElseIf tbcTabController.SelectedTab.Name = "tabAjouter" Then
-                initTabAjouter()
+                initTabAjouter(optAjouterSoir, optAjouterMidi)
                 Me.AcceptButton = cmdEnregistrerAjouter
             ElseIf tbcTabController.SelectedTab.Name = "tabManger" Then
                 Me.AcceptButton = cmdRechercher
@@ -92,7 +82,8 @@ Public Class FrmPrincipale
 
         datNoterJour.MaxDate = Date.Now
         calPlanifier.MinDate = Date.Now
-        plaPropositionJour.Plat = PropositionDuJour()
+        plaPropositionJour.Plat = getPlatAleatoire()
+        initTabPlanifier(chplaPlanifier)
     End Sub
 
     Private Sub mnuDeconnexion_Click(sender As Object, e As EventArgs) Handles mnuDeconnexion.Click

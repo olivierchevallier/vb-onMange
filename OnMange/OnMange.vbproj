@@ -153,6 +153,7 @@
     <Compile Include="ModAliments.vb" />
     <Compile Include="ModBDD.vb" />
     <Compile Include="ModMembres.vb" />
+    <Compile Include="ModPlanifier.vb" />
     <Compile Include="ModPlats.vb" />
     <Compile Include="ModRepas.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

@@ -72,7 +72,7 @@ Module ModPlats
         Return reader_Sql.Item(0)
     End Function
 
-    Public Function PropositionDuJour() As Plat
+    Public Function getPlatAleatoire() As Plat
         RecupPlats()
         Randomize()
         Dim randomValue As Integer = CInt(Int(((listePlats.Count - 1) * Rnd()) + 1))
