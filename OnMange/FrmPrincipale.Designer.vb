@@ -550,9 +550,6 @@ Partial Class FrmPrincipale
         Me.mnuDeconnexion.Size = New System.Drawing.Size(88, 20)
         Me.mnuDeconnexion.Text = "&Déconnexion"
         '
-        'VW_UTILISATEURSTableAdapter1
-        '
-        '
         'FrmPrincipale
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)

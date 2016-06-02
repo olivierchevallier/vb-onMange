@@ -126,7 +126,7 @@ Public Class FrmPrincipale
     End Sub
 
     Private Sub gestionBoutonEnregistrer()
-        cmdEnregistrerAjouter.Enabled = txtPlat.Text <> "" And cboAjouterOrigine.Text <> ""
+        cmdEnregistrerAjouter.Enabled = txtPlat.Text <> "" And cboAjouterOrigine.Text <> "" And IsNothing(recupUnRepas(Date.Now, If(optAjouterMidi.Checked, "m", "s")))
     End Sub
 
     Private Sub cboAjouterOrigine_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboAjouterOrigine.SelectedIndexChanged
@@ -145,5 +145,10 @@ Public Class FrmPrincipale
         Else
             enregistrerRepas(moment, Date.Now, platAjouter)
         End If
+        gestionBoutonEnregistrer()
+    End Sub
+
+    Private Sub optAjouterMidi_CheckedChanged(sender As Object, e As EventArgs) Handles optAjouterMidi.CheckedChanged
+        gestionBoutonEnregistrer()
     End Sub
 End Class
