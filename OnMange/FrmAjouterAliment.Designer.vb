@@ -84,6 +84,7 @@ Partial Class FrmAjouterAliment
         'btnFermer
         '
         Me.btnFermer.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnFermer.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnFermer.Location = New System.Drawing.Point(232, 227)
         Me.btnFermer.Name = "btnFermer"
         Me.btnFermer.Size = New System.Drawing.Size(75, 23)
@@ -93,8 +94,10 @@ Partial Class FrmAjouterAliment
         '
         'FrmAjouterAliment
         '
+        Me.AcceptButton = Me.btnAjouter
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnFermer
         Me.ClientSize = New System.Drawing.Size(319, 262)
         Me.Controls.Add(Me.btnFermer)
         Me.Controls.Add(Me.btnAjouter)

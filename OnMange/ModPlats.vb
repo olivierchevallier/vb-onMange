@@ -9,7 +9,7 @@ Module ModPlats
         strRequete = "SELECT * FROM vw_plats"
         do_sql(strRequete, reader_Sql)
         While (reader_Sql.Read)
-            Dim platAjouter As Plat = New Plat(reader_Sql.Item(0), reader_Sql.Item(1), reader_Sql.Item(2), reader_Sql.Item(3), reader_Sql.Item(4))
+            Dim platAjouter As Plat = New Plat(reader_Sql.Item(0), reader_Sql.Item(1), reader_Sql.Item(2), reader_Sql.Item(3), If(IsDBNull(reader_Sql.Item(4)), 0, reader_Sql.Item(4)))
             listePlats.Add(platAjouter)
         End While
     End Sub

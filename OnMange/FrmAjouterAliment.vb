@@ -25,11 +25,17 @@
 
     Private Sub lstAliments_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstAliments.SelectedIndexChanged
         If lstAliments.SelectedIndices.Count > 0 And lstAliments.SelectedIndex >= listeAliments.Count Then
+            btnAjouter.Text = "Ajouter"
             btnAjouter.Enabled = True
         ElseIf lstAliments.SelectedIndices.Count > 0 And Not listeAlimentsRepas.Contains(listeAliments(lstAliments.SelectedIndex)) Then
+            btnAjouter.Text = "Ajouter"
             btnAjouter.Enabled = True
-        Else
+        ElseIf lstAliments.SelectedIndices.Count <= 0 Then
+            btnAjouter.Text = "Ajouter"
             btnAjouter.Enabled = False
+        Else
+            btnAjouter.Text = "Supprimer"
+            btnAjouter.Enabled = True
         End If
     End Sub
 
@@ -42,16 +48,29 @@
     End Sub
 
     Private Sub btnAjouter_Click(sender As Object, e As EventArgs) Handles btnAjouter.Click
+        GestionAliment()
+    End Sub
+
+    Private Sub GestionAliment()
         Dim aliment As String, index As Integer
         If listeAliments.Count < 1 Then
-            Aliment = StrConv(txtRechercher.Text, VbStrConv.ProperCase)
+            aliment = StrConv(txtRechercher.Text, VbStrConv.ProperCase)
             ajouterAliment(aliment)
             RechercherAliments(Trim(txtRechercher.Text))
         End If
         index = If(lstAliments.SelectedIndex > 0, lstAliments.SelectedIndex, 0)
-        listeAlimentsRepas.Add(listeAliments(index))
+        If btnAjouter.Text = "Ajouter" Then
+            listeAlimentsRepas.Add(listeAliments(index))
+        Else
+            listeAlimentsRepas.Remove(listeAliments(index))
+        End If
         ConvertirAlimentsString()
         FrmPrincipale.afficherAlimentsAjouter()
         AfficherAliments()
+        lstAliments.SelectedIndex() = index
+    End Sub
+
+    Private Sub lstAliments_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles lstAliments.MouseDoubleClick
+        GestionAliment()
     End Sub
 End Class

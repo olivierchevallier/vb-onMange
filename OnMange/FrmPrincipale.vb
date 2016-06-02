@@ -152,4 +152,12 @@ Public Class FrmPrincipale
     Private Sub optAjouterMidi_CheckedChanged(sender As Object, e As EventArgs) Handles optAjouterMidi.CheckedChanged
         gestionBoutonEnregistrer()
     End Sub
+
+    Private Sub cmdSupAliments_Click(sender As Object, e As EventArgs) Handles cmdSupAliments.Click
+        If listeAlimentsRepas.Count() > 0 Then
+            listeAlimentsRepas.RemoveAt(listeAlimentsRepas.Count() - 1)
+            ConvertirAlimentsString()
+            afficherAlimentsAjouter()
+        End If
+    End Sub
 End Class

@@ -65,6 +65,7 @@ Partial Class FrmPrincipale
         Me.mnuPrincipalStrip = New System.Windows.Forms.MenuStrip()
         Me.mnuAdministration = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuDeconnexion = New System.Windows.Forms.ToolStripMenuItem()
+        Me.cmdSupAliments = New System.Windows.Forms.Button()
         Me.tbcTabController.SuspendLayout()
         Me.tabManger.SuspendLayout()
         CType(Me.picManger, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -171,6 +172,7 @@ Partial Class FrmPrincipale
         '
         'tabAjouter
         '
+        Me.tabAjouter.Controls.Add(Me.cmdSupAliments)
         Me.tabAjouter.Controls.Add(Me.lblOu)
         Me.tabAjouter.Controls.Add(Me.btnPlatExistant)
         Me.tabAjouter.Controls.Add(Me.cmdEnregistrerAjouter)
@@ -207,7 +209,7 @@ Partial Class FrmPrincipale
         Me.btnPlatExistant.Location = New System.Drawing.Point(156, 176)
         Me.btnPlatExistant.Name = "btnPlatExistant"
         Me.btnPlatExistant.Size = New System.Drawing.Size(201, 35)
-        Me.btnPlatExistant.TabIndex = 35
+        Me.btnPlatExistant.TabIndex = 2
         Me.btnPlatExistant.Text = "&Choisir dans l'historique"
         Me.btnPlatExistant.UseVisualStyleBackColor = True
         '
@@ -241,7 +243,7 @@ Partial Class FrmPrincipale
         Me.cboAjouterOrigine.Location = New System.Drawing.Point(264, 348)
         Me.cboAjouterOrigine.Name = "cboAjouterOrigine"
         Me.cboAjouterOrigine.Size = New System.Drawing.Size(136, 28)
-        Me.cboAjouterOrigine.TabIndex = 9
+        Me.cboAjouterOrigine.TabIndex = 10
         '
         'txtAlimentsPrincipaux
         '
@@ -266,7 +268,7 @@ Partial Class FrmPrincipale
         Me.lblAjouterOrigine.Location = New System.Drawing.Point(113, 351)
         Me.lblAjouterOrigine.Name = "lblAjouterOrigine"
         Me.lblAjouterOrigine.Size = New System.Drawing.Size(59, 20)
-        Me.lblAjouterOrigine.TabIndex = 8
+        Me.lblAjouterOrigine.TabIndex = 9
         Me.lblAjouterOrigine.Text = "&Origine"
         '
         'lblAjouterAliments
@@ -296,7 +298,7 @@ Partial Class FrmPrincipale
         Me.optAjouterSoir.Location = New System.Drawing.Point(261, 146)
         Me.optAjouterSoir.Name = "optAjouterSoir"
         Me.optAjouterSoir.Size = New System.Drawing.Size(125, 24)
-        Me.optAjouterSoir.TabIndex = 2
+        Me.optAjouterSoir.TabIndex = 1
         Me.optAjouterSoir.Text = "&Repas du soir"
         Me.optAjouterSoir.UseVisualStyleBackColor = True
         '
@@ -308,7 +310,7 @@ Partial Class FrmPrincipale
         Me.optAjouterMidi.Location = New System.Drawing.Point(127, 146)
         Me.optAjouterMidi.Name = "optAjouterMidi"
         Me.optAjouterMidi.Size = New System.Drawing.Size(128, 24)
-        Me.optAjouterMidi.TabIndex = 1
+        Me.optAjouterMidi.TabIndex = 0
         Me.optAjouterMidi.TabStop = True
         Me.optAjouterMidi.Text = "&Repas de midi"
         Me.optAjouterMidi.UseVisualStyleBackColor = True
@@ -550,6 +552,16 @@ Partial Class FrmPrincipale
         Me.mnuDeconnexion.Size = New System.Drawing.Size(88, 20)
         Me.mnuDeconnexion.Text = "&Déconnexion"
         '
+        'cmdSupAliments
+        '
+        Me.cmdSupAliments.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.cmdSupAliments.Location = New System.Drawing.Point(443, 305)
+        Me.cmdSupAliments.Name = "cmdSupAliments"
+        Me.cmdSupAliments.Size = New System.Drawing.Size(31, 27)
+        Me.cmdSupAliments.TabIndex = 8
+        Me.cmdSupAliments.Text = "&-"
+        Me.cmdSupAliments.UseVisualStyleBackColor = True
+        '
         'FrmPrincipale
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -625,4 +637,5 @@ Partial Class FrmPrincipale
     Friend WithEvents PlaNoter As PnlPlat
     Friend WithEvents notNotePerso As Note
     Friend WithEvents chplaPlanifier As ChoixPlat
+    Friend WithEvents cmdSupAliments As Button
 End Class
