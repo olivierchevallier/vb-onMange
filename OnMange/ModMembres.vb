@@ -8,6 +8,7 @@ Module ModMembres
     Public membreActif As Membre = Nothing
     Public listeMembres As New List(Of Membre)
 
+    'Récupère la liste des membres dans la base de données
     Public Sub RecupMemebres()
         Dim strRequete As String
         Dim reader_Sql As OracleDataReader
@@ -22,14 +23,15 @@ Module ModMembres
         End While
     End Sub
 
+    'Modifie le membre passé en paramètre dans la base de données
     Public Sub updateMembre(paramMembre As Membre)
-        'Fonctionne, mais changer la classe personne pour intégrer l'id et faire la comparaison sur celui-ci plutot que sur le prénom
         Dim strRequete As String
         Dim reader_Sql As OracleDataReader
         strRequete = "UPDATE vw_onm_membre SET mem_prenom = '" + paramMembre.ToString() + "', mem_naissance = to_date('" + paramMembre.getDateNaissance() + "', 'DD/MM/YYYY'), mem_autorisation = '" + paramMembre.getAutorisation() + "' WHERE mem_no = " + CStr(paramMembre.getIdentifiant)
         do_sql(strRequete, reader_Sql)
     End Sub
 
+    'Ajoute un memebre à la base de données
     Public Sub AddMembre(paramMembre As Membre, paramNom As String)
         Dim strRequete As String
         Dim reader_Sql As OracleDataReader
@@ -37,6 +39,7 @@ Module ModMembres
         do_sql(strRequete, reader_Sql)
     End Sub
 
+    'Supprime le membre passé en paramètre de la base de données
     Public Sub DeleteMembre(paramMembre)
         Dim strRequete As String
         Dim reader_Sql As OracleDataReader

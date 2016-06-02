@@ -14,6 +14,7 @@ Public Class FrmConsulter
         afficherPlats(listePlats)
     End Sub
 
+    'Affiche les plats de la liste dans le DGV
     Private Sub afficherPlats(ByVal platsAAfficher As List(Of Plat))
         dgvHistorique.Rows.Clear()
         For i = 0 To platsAAfficher.Count - 1
@@ -29,6 +30,7 @@ Public Class FrmConsulter
         Rechercher()
     End Sub
 
+    'Effectue la recherche dans le DGV
     Private Sub Rechercher()
         Dim origine As String, pasMange As Date
         origine = If(IsNothing(cboMangerOrigine.SelectedItem), "", cboMangerOrigine.SelectedItem)

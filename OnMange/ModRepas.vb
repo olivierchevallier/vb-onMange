@@ -38,6 +38,7 @@ Module ModRepas
         do_sql(strRequete, reader_Sql)
     End Sub
 
+    'Enregistre la note d'un repas pour un membre donné
     Public Sub enregistrerNote(paramRepas As Repas, paramMembre As Membre, paramNote As Integer)
         Dim strRequete As String
         Dim reader_Sql As OracleDataReader
@@ -45,6 +46,7 @@ Module ModRepas
         do_sql(strRequete, reader_Sql)
     End Sub
 
+    'récupère la note pour un utilisateur et un repas donné
     Public Function recupNote(paramRepas As Repas, paramMembre As Membre)
         Dim strRequete As String
         Dim reader_Sql As OracleDataReader

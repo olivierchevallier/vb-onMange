@@ -9,6 +9,7 @@ Imports System.Data.OracleClient
 Public Class FrmLogin
     Dim secondes As Integer
 
+    'Demande la connexion l'utilisateur selectionné
     Private Sub lstUtilisateurs_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles lstUtilisateurs.MouseDoubleClick
         If lstUtilisateurs.SelectedItems.Count > 0 Then
             membreActif = listeMembres(lstUtilisateurs.SelectedIndices(0))
@@ -21,6 +22,7 @@ Public Class FrmLogin
         AfficherMembres()
     End Sub
 
+    'Affiche la liste des membres (utilisateurs)
     Private Sub AfficherMembres()
         lstUtilisateurs.Items.Clear()
         RecupMemebres()
@@ -34,6 +36,7 @@ Public Class FrmLogin
         secondes = 0
     End Sub
 
+    'Affiche un message explicant comment s'identfier sur l'applîcation au bout de deux secondes passées avec un membre selectionné 
     Private Sub timTip_Tick(sender As Object, e As EventArgs) Handles timTip.Tick
         secondes += 1
         If (secondes > 2) Then

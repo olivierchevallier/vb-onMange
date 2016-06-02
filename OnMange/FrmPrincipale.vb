@@ -47,6 +47,7 @@ Public Class FrmPrincipale
         txtAlimentsPrincipaux.Text = strAlimentsRepas
     End Sub
 
+    'Change les AcceptButton en fonction de l'onglet, change la taille de la fenêtre si l'onglet en a besoin
     Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tbcTabController.SelectedIndexChanged
         If tbcTabController.SelectedTab.Name = "tabPlanifier" Then
             Me.Height += 150
@@ -100,6 +101,7 @@ Public Class FrmPrincipale
         FrmConsulter.Show()
     End Sub
 
+    'Change le titre et affiche ou non le bouton dans la fenêtre de consultation
     Private Sub btnPlatExistant_Click(sender As Object, e As EventArgs) Handles btnPlatExistant.Click
         FrmConsulter.btnChoisir.Visible = True
         FrmConsulter.lblMangerTitre.Text = "Selectionner  dans  l'historique"
@@ -119,6 +121,8 @@ Public Class FrmPrincipale
         AfficherANoter()
     End Sub
 
+    'Si le plat entré dans le champs existe déjà, les détails de celui-ci sont affichés et les champs affichants ces détails sont verouillés.
+    'Dans les cas contraire les champs de détail sont dévérouillés
     Private Sub txtPlat_TextChanged(sender As Object, e As EventArgs) Handles txtPlat.TextChanged
         platAjouter = RechercherUnPlat(txtPlat.Text)
         cmdAjouterAliment.Enabled = IsNothing(platAjouter)

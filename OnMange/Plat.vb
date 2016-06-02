@@ -70,6 +70,7 @@ Public Class Plat
         Return Me.nomPlat.Equals(paramPlat.GetNomPlat)
     End Function
 
+    'Récupère les aliment d'un plat
     Public Function RecupAlimentsPlat() As List(Of Aliment)
         Dim strRequete As String
         Dim reader_Sql As OracleDataReader

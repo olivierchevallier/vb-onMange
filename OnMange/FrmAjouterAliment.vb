@@ -14,6 +14,7 @@ Public Class FrmAjouterAliment
         lstAliments.SelectedIndex() = 0
     End Sub
 
+    'Effectue la recherche d'un aliment
     Private Sub txtRechercher_TextChanged(sender As Object, e As EventArgs) Handles txtRechercher.TextChanged
         RechercherAliments(Trim(txtRechercher.Text))
         AfficherAliments()
@@ -21,6 +22,7 @@ Public Class FrmAjouterAliment
         If lstAliments.Items.Count > 0 Then lstAliments.SelectedIndex() = 0
     End Sub
 
+    'Affiche les aliments de la liste
     Private Sub AfficherAliments()
         lstAliments.Items.Clear()
         For i = 0 To listeAliments.Count - 1
@@ -28,6 +30,7 @@ Public Class FrmAjouterAliment
         Next
     End Sub
 
+    'Gère le texte et l'activation du bouton
     Private Sub lstAliments_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstAliments.SelectedIndexChanged
         If lstAliments.SelectedIndices.Count > 0 And lstAliments.SelectedIndex >= listeAliments.Count Then
             btnAjouter.Text = "Ajouter"
@@ -44,6 +47,7 @@ Public Class FrmAjouterAliment
         End If
     End Sub
 
+    'Demande la création d'un nouvel aliment 
     Private Sub NouvelAliment()
         Dim aliment As String
         aliment = StrConv(txtRechercher.Text, VbStrConv.ProperCase)
@@ -56,6 +60,7 @@ Public Class FrmAjouterAliment
         GestionAliment()
     End Sub
 
+    'Demande l'ajout de l'aliment au plat si celui-ci n'en fait pas encore parti ou le supprime du plat s'il en fait parti
     Private Sub GestionAliment()
         Dim aliment As String, index As Integer
         If listeAliments.Count < 1 Then

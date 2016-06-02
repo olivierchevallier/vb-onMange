@@ -13,6 +13,7 @@ Public Class FrmAdmin
         ActivationBouton()
     End Sub
 
+    'Gère si un utilisateur est selectionné ou non
     Private Sub lstUtilisateurs_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstUtilisateurs.SelectedIndexChanged
         modifier = lstUtilisateurs.SelectedItems.Count > 0
         If modifier Then
@@ -33,6 +34,7 @@ Public Class FrmAdmin
         End If
     End Sub
 
+    'Affiche la liste des membres
     Private Sub AfficherMembres()
         lstUtilisateurs.Items.Clear()
         RecupMemebres()
@@ -41,6 +43,7 @@ Public Class FrmAdmin
         Next
     End Sub
 
+    'Affiche les informations du membre selectionné
     Private Sub afficherInfoMembre(ByVal membreAAfficher As Membre)
         txtAdminPrenom.Text = membreAAfficher.ToString()
         datAdminDateNaissance.Value = membreAAfficher.getDateNaissance()
@@ -51,12 +54,14 @@ Public Class FrmAdmin
         End If
     End Sub
 
+    'Efface le contenu des champs du formulaire
     Private Sub effacerChamps()
         txtAdminPrenom.Text = ""
         datAdminDateNaissance.Value = datAdminDateNaissance.MaxDate
         cbxAdminAutorisations.SelectedIndex = -1
     End Sub
 
+    'Demande l'edition d'un membre
     Private Sub btnEditer_Click(sender As Object, e As EventArgs) Handles btnEditer.Click
         Dim membreEdite As Membre = New Membre(txtAdminPrenom.Text, datAdminDateNaissance.Value, If(cbxAdminAutorisations.SelectedIndex = 1, "A", "N"), 0)
         If modifier Then
@@ -70,6 +75,7 @@ Public Class FrmAdmin
         AfficherMembres()
     End Sub
 
+    'Active le bouton d'edition en fonction de plusieurs critères
     Private Sub ActivationBouton()
         btnEditer.Enabled = (txtAdminPrenom.Text.Length > 0 And cbxAdminAutorisations.SelectedIndex >= 0 And txtAdminNom.Text.Length > 0)
     End Sub
@@ -89,6 +95,7 @@ Public Class FrmAdmin
         deleteSelectedMembre()
     End Sub
 
+    'Demande la supression d'un membre
     Private Sub deleteSelectedMembre()
         If membreActif.Equals(membreSelectionne) Then
             MsgBox("Connecter vous avec un autre utilisateur pour supprimer " + membreActif.ToString(), , "Vous ne pouvez pas vous suppimer vous même.")
