@@ -6,11 +6,56 @@
 ' Olivier Chevallier
 
 Public Class FrmPrincipale
+    'Constantes
     Const FRM_HEIGHT = 600
     Const FRM_WIDTH = 560
 
+    'Variables globales
     Dim noteAjouter As Integer = 0
     Dim noteNoter As Integer = 0
+
+    'Affiche la proposition du jour
+    Private Sub AfficherPropositionJour()
+        plaPropositionJour.Plat = PropositionDuJour()
+    End Sub
+
+    'Affiche le plat à noter
+    Private Sub AfficherANoter()
+        Dim dateChoise As Date, moment As String, repasCourant As Repas
+        moment = If(optMidi.Checked, "m", "s")
+        dateChoise = datNoterJour.Value
+        repasCourant = recupUnRepas(dateChoise, moment)
+        If IsNothing(repasCourant) Then
+            PlaNoter.NomPlat = "Date invalide"
+            PlaNoter.Origine = "Pas de repas enregistré à ce moment"
+            PlaNoter.Note = 0
+        Else
+            PlaNoter.Plat = repasCourant
+        End If
+        cmdEnregistrerNote.Enabled = Not IsNothing(repasCourant)
+    End Sub
+
+    'Effectue toutes les opérations nécessaires au chargement de l'onglet ajouter
+    Private Sub initTabAjouter()
+        'S'il est passé 12h59 l'option soir est automatiquement cochée
+        If Date.Now.Hour > 12 Then
+            optAjouterSoir.Select()
+        Else
+            optAjouterMidi.Select()
+        End If
+    End Sub
+
+    'initialisations de l'interface en fonction du membre connecté
+    Private Sub InitMembre()
+        mnuDeconnexion.Text += " (" + membreActif.ToString + ")"
+        tabAjouter.Enabled = membreActif.isAdder()
+    End Sub
+
+    'Affiche les aliments à ajouter dans champs prévu à cet effet
+    Public Sub afficherAlimentsAjouter()
+        ConvertirAlimentsString()
+        txtAlimentsPrincipaux.Text = strAlimentsRepas
+    End Sub
 
     Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tbcTabController.SelectedIndexChanged
         If tbcTabController.SelectedTab.Name = "tabPlanifier" Then
@@ -19,7 +64,7 @@ Public Class FrmPrincipale
         Else
             If tbcTabController.SelectedTab.Name = "tabNoter" Then
                 AfficherANoter()
-            ElseIf tbcTabController.SelectedTab.Name = "tabAjouter"
+            ElseIf tbcTabController.SelectedTab.Name = "tabAjouter" Then
                 initTabAjouter()
             End If
             Me.Height = FRM_HEIGHT
@@ -41,6 +86,7 @@ Public Class FrmPrincipale
         InitMembre()
 
         datNoterJour.MaxDate = Date.Now
+        calPlanifier.MinDate = Date.Now
         AfficherPropositionJour()
     End Sub
 
@@ -67,53 +113,12 @@ Public Class FrmPrincipale
         txtPlat.Text = nomPlatAjouter
     End Sub
 
-    'Affiche la proposition du jour
-    Private Sub AfficherPropositionJour()
-        plaPropositionJour.Plat = PropositionDuJour()
-    End Sub
-
-    'Affiche le plat à noter
-    Private Sub AfficherANoter()
-        Dim dateChoise As Date, moment As String, repasCourant As Repas
-        moment = If(optMidi.Checked, "m", "s")
-        dateChoise = datNoterJour.Value
-        repasCourant = recupUnRepas(dateChoise, moment)
-        If IsNothing(repasCourant) Then
-            PlaNoter.NomPlat = "Date invalide"
-            PlaNoter.Origine = "Pas de repas enregistré à ce moment"
-            PlaNoter.Note = 0
-        Else
-            PlaNoter.Plat = repasCourant
-        End If
-        cmdEnregistrerNote.Enabled = Not IsNothing(repasCourant)
-    End Sub
-
-    Private Sub initTabAjouter()
-        'S'il est passé 12h59 l'option soir est automatiquement cochée
-        If Date.Now.Hour > 12 Then
-            optAjouterSoir.Select()
-        Else
-            optAjouterMidi.Select()
-        End If
-    End Sub
-
     Private Sub datNoterJour_ValueChanged(sender As Object, e As EventArgs) Handles datNoterJour.ValueChanged
         AfficherANoter()
     End Sub
 
     Private Sub optSoir_CheckedChanged(sender As Object, e As EventArgs) Handles optSoir.CheckedChanged
         AfficherANoter()
-    End Sub
-
-    'initialisations de l'interface en fonction du membre connecté
-    Private Sub InitMembre()
-        mnuDeconnexion.Text += " (" + membreActif.ToString + ")"
-        tabAjouter.Enabled = membreActif.isAdder()
-    End Sub
-
-    Public Sub afficherAlimentsAjouter()
-        ConvertirAlimentsString()
-        txtAlimentsPrincipaux.Text = strAlimentsRepas
     End Sub
 
     Private Sub txtPlat_TextChanged(sender As Object, e As EventArgs) Handles txtPlat.TextChanged
@@ -125,7 +130,7 @@ Public Class FrmPrincipale
         txtAlimentsPrincipaux.Text = strAlimentsRepas
         cboAjouterOrigine.Text = If(IsNothing(platAjouter), cboAjouterOrigine.Text, platAjouter.GetOrigine())
         gestionBoutonEnregistrer()
-        If IsNothing(platAjouter) then afficherAlimentsAjouter()
+        If IsNothing(platAjouter) Then afficherAlimentsAjouter()
     End Sub
 
     Private Sub txtAlimentsPrincipaux_TextChanged(sender As Object, e As EventArgs) Handles txtAlimentsPrincipaux.TextChanged
