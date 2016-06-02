@@ -64,7 +64,6 @@
         Else
             listeAlimentsRepas.Remove(listeAliments(index))
         End If
-        ConvertirAlimentsString()
         FrmPrincipale.afficherAlimentsAjouter()
         AfficherAliments()
         lstAliments.SelectedIndex() = index

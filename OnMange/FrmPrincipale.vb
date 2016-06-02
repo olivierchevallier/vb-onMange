@@ -108,17 +108,20 @@ Public Class FrmPrincipale
     End Sub
 
     Public Sub afficherAlimentsAjouter()
+        ConvertirAlimentsString()
         txtAlimentsPrincipaux.Text = strAlimentsRepas
     End Sub
 
     Private Sub txtPlat_TextChanged(sender As Object, e As EventArgs) Handles txtPlat.TextChanged
         platAjouter = RechercherUnPlat(txtPlat.Text)
         cmdAjouterAliment.Enabled = IsNothing(platAjouter)
+        cmdSupAliments.Enabled = IsNothing(platAjouter)
         cboAjouterOrigine.Enabled = IsNothing(platAjouter)
         strAlimentsRepas = If(IsNothing(platAjouter), strAlimentsRepas, platAjouter.GetAlimentsString())
         txtAlimentsPrincipaux.Text = strAlimentsRepas
         cboAjouterOrigine.Text = If(IsNothing(platAjouter), cboAjouterOrigine.Text, platAjouter.GetOrigine())
         gestionBoutonEnregistrer()
+        If IsNothing(platAjouter) Then afficherAlimentsAjouter()
     End Sub
 
     Private Sub txtAlimentsPrincipaux_TextChanged(sender As Object, e As EventArgs) Handles txtAlimentsPrincipaux.TextChanged
@@ -156,7 +159,6 @@ Public Class FrmPrincipale
     Private Sub cmdSupAliments_Click(sender As Object, e As EventArgs) Handles cmdSupAliments.Click
         If listeAlimentsRepas.Count() > 0 Then
             listeAlimentsRepas.RemoveAt(listeAlimentsRepas.Count() - 1)
-            ConvertirAlimentsString()
             afficherAlimentsAjouter()
         End If
     End Sub
