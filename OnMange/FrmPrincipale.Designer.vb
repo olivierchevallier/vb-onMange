@@ -564,6 +564,7 @@ Partial Class FrmPrincipale
         '
         'FrmPrincipale
         '
+        Me.AcceptButton = Me.cmdRechercher
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(544, 562)

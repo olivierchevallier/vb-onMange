@@ -15,11 +15,6 @@ Public Class FrmPrincipale
     Dim noteNoter As Integer = 0
     Dim repasCourant As Repas
 
-    'Affiche la proposition du jour
-    Private Sub AfficherPropositionJour()
-        plaPropositionJour.Plat = PropositionDuJour()
-    End Sub
-
     'Affiche le plat à noter
     Private Sub AfficherANoter()
         Dim dateChoise As Date, moment As String
@@ -66,11 +61,16 @@ Public Class FrmPrincipale
         If tbcTabController.SelectedTab.Name = "tabPlanifier" Then
             Me.Height += 150
             Me.Width += 100
+            Me.AcceptButton = cmdEnregistrerVote
         Else
             If tbcTabController.SelectedTab.Name = "tabNoter" Then
                 AfficherANoter()
+                Me.AcceptButton = cmdEnregistrerNote
             ElseIf tbcTabController.SelectedTab.Name = "tabAjouter" Then
                 initTabAjouter()
+                Me.AcceptButton = cmdEnregistrerAjouter
+            ElseIf tbcTabController.SelectedTab.Name = "tabManger" Then
+                Me.AcceptButton = cmdRechercher
             End If
             Me.Height = FRM_HEIGHT
             Me.Width = FRM_WIDTH
@@ -92,7 +92,7 @@ Public Class FrmPrincipale
 
         datNoterJour.MaxDate = Date.Now
         calPlanifier.MinDate = Date.Now
-        AfficherPropositionJour()
+        plaPropositionJour.Plat = PropositionDuJour()
     End Sub
 
     Private Sub mnuDeconnexion_Click(sender As Object, e As EventArgs) Handles mnuDeconnexion.Click
