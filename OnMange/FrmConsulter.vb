@@ -1,4 +1,9 @@
-﻿Public Class FrmConsulter
+﻿' 624-2 Projet de Génie logiciel - OnMange!
+'
+' Fenêtre permettant de consulter un historique des plats 
+'
+' Olivier Chevallier
+Public Class FrmConsulter
     Private Sub btnChoisir_Click(sender As Object, e As EventArgs) Handles btnChoisir.Click
         nomPlatAjouter = dgvHistorique.SelectedCells(0).Value
         Me.Close()

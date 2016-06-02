@@ -1,5 +1,9 @@
-﻿Imports OnMange.ModBDD
-Imports System.Data.OracleClient
+﻿' 624-2 Projet de Génie logiciel - OnMange!
+'
+' Fenêtre principale de l'application tout se passe ici.
+' Plusieurs onglets sont disponibles, chacun est dédié à une fonctionnalité de l'application.
+'
+' Olivier Chevallier
 
 Public Class FrmPrincipale
     Const FRM_HEIGHT = 600
@@ -121,7 +125,7 @@ Public Class FrmPrincipale
         txtAlimentsPrincipaux.Text = strAlimentsRepas
         cboAjouterOrigine.Text = If(IsNothing(platAjouter), cboAjouterOrigine.Text, platAjouter.GetOrigine())
         gestionBoutonEnregistrer()
-        If IsNothing(platAjouter) Then afficherAlimentsAjouter()
+        If IsNothing(platAjouter) then afficherAlimentsAjouter()
     End Sub
 
     Private Sub txtAlimentsPrincipaux_TextChanged(sender As Object, e As EventArgs) Handles txtAlimentsPrincipaux.TextChanged

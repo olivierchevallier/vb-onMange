@@ -1,4 +1,9 @@
-﻿Imports System.Data.OracleClient
+﻿' 624-2 Projet de Génie logiciel - OnMange!
+'
+' Module gérant l'accès à la base de données pour les Plats
+'
+' Olivier Chevallier
+Imports System.Data.OracleClient
 Module ModPlats
     Public listePlats As New List(Of Plat)
 

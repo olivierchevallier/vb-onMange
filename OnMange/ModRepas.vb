@@ -1,4 +1,9 @@
-﻿Imports System.Data.OracleClient
+﻿' 624-2 Projet de Génie logiciel - OnMange!
+'
+' Module gérant l'accès à la base de données pour les Repas
+'
+' Olivier Chevallier
+Imports System.Data.OracleClient
 Module ModRepas
     'Récupère un repas en fonction de sa date et de son moment
     Public Function recupUnRepas(ByVal paramDateRepas As Date, ByVal paramMomentRepas As String) As Plat

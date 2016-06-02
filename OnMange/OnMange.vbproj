@@ -147,7 +147,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GestionConnexion.vb" />
-    <Compile Include="GestionNote.vb" />
+    <Compile Include="Composants\GestionNote.vb" />
     <Compile Include="Membre.vb" />
     <Compile Include="ModAjoutRepas.vb" />
     <Compile Include="ModAliments.vb" />

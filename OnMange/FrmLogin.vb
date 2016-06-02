@@ -1,4 +1,10 @@
-﻿Imports OnMange.ModBDD
+﻿' 624-2 Projet de Génie logiciel - OnMange!
+'
+' Fenêtre permettant l'identification de l'utilisateur
+'
+' Olivier Chevallier
+
+Imports OnMange.ModBDD
 Imports System.Data.OracleClient
 Public Class FrmLogin
     Dim secondes As Integer

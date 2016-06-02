@@ -1,4 +1,9 @@
-﻿Public Class Membre
+﻿' 624-2 Projet de Génie logiciel - OnMange!
+'
+' Classe modélisant un Membre
+'
+' Olivier Chevallier
+Public Class Membre
     Dim identifiant As Integer
     Dim prenom As String
     Dim dateNaissance As Date

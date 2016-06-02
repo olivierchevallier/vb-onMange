@@ -1,4 +1,9 @@
-﻿Imports System.Data.OracleClient
+﻿' 624-2 Projet de Génie logiciel - OnMange!
+'
+' Module gérant l'accès à la base de données pour les Aliments
+'
+' Olivier Chevallier
+Imports System.Data.OracleClient
 Module ModAliments
     Public listeAliments As New List(Of Aliment)
 

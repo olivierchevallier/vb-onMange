@@ -1,4 +1,9 @@
-﻿Module ModAjoutRepas
+﻿' 624-2 Projet de Génie logiciel - OnMange!
+'
+' Module controlant l'ajout de repas
+'
+' Olivier Chevallier
+Module ModAjoutRepas
     Public listeAlimentsRepas As New List(Of Aliment)
     Public strAlimentsRepas As String = ""
     Public nomPlatAjouter As String

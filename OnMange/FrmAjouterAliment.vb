@@ -1,4 +1,9 @@
-﻿Public Class FrmAjouterAliment
+﻿' 624-2 Projet de Génie logiciel - OnMange!
+'
+' Fenêtre permettant l'ajout d'aliments dans le cadre de l'ajout d'un repas
+'
+' Olivier Chevallier
+Public Class FrmAjouterAliment
     Private Sub btnFermer_Click(sender As Object, e As EventArgs) Handles btnFermer.Click
         Me.Close()
     End Sub

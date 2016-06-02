@@ -1,4 +1,9 @@
-﻿Public Class Aliment
+﻿' 624-2 Projet de Génie logiciel - OnMange!
+'
+' Classe modélisant un Aliment
+'
+' Olivier Chevallier
+Public Class Aliment
     Dim identifiant As Integer
     Dim nomAliment As String
 

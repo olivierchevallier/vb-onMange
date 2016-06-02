@@ -1,4 +1,9 @@
-﻿Imports System.Data.OracleClient
+﻿' 624-2 Projet de Génie logiciel - OnMange!
+'
+' Classe modélisant un Plat
+'
+' Olivier Chevallier
+Imports System.Data.OracleClient
 Public Class Plat
     Private identifiant As Integer
     Private nomPlat As String

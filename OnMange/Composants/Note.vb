@@ -5,7 +5,6 @@
 
     Private Sub Note_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         initialiserStars()
-        'picEtoile1.Visible = True
     End Sub
 
     Property LectureSeule() As Boolean

@@ -1,4 +1,9 @@
-﻿Public Class Repas
+﻿' 624-2 Projet de Génie logiciel - OnMange!
+'
+' Classe modélisant un Repas
+'
+' Olivier Chevallier
+Public Class Repas
     Inherits Plat
 
     Private moment As String

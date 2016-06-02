@@ -1,4 +1,9 @@
-﻿Imports System.Timers
+﻿' 624-2 Projet de Génie logiciel - OnMange!
+'
+' Module controlant le composant Note
+' 
+'
+' Olivier Chevallier
 
 Module GestionNote
     Public Function afficheNoteSouris(sender As Object, stars As Collection, click As Boolean) As Integer

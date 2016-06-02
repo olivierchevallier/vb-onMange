@@ -1,6 +1,6 @@
 ﻿' 624-2 Projet de Génie logiciel - OnMange!
 '
-' Module gérant la connexion à la base de données
+' Classe gérant la connexion à la base de données
 '
 ' Olivier Chevallier
 Imports System.Data.OracleClient

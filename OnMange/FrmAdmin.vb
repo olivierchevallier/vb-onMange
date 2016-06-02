@@ -1,4 +1,9 @@
-﻿Public Class FrmAdmin
+﻿' 624-2 Projet de Génie logiciel - OnMange!
+'
+' Fenêtre d'administration de l'application
+'
+' Olivier Chevallier
+Public Class FrmAdmin
     Dim modifier As Boolean
     Dim membreSelectionne As Membre
 

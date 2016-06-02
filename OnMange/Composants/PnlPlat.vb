@@ -17,12 +17,12 @@ Public Class PnlPlat
         End Set
     End Property
 
-    Property NomPlat As String
+    Property NomPlat() As String
         Get
             Return lblPlat.Text
         End Get
         Set(value As String)
-            lblPlat.Text = lblPlat.Text
+            lblPlat.Text = value
             Centrer(lblPlat)
         End Set
     End Property
