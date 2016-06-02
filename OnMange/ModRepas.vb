@@ -44,4 +44,12 @@ Module ModRepas
         strRequete = "INSERT INTO vw_onm_note VALUES(" + CStr(paramRepas.getIdentifiant()) + ", " + CStr(paramMembre.getIdentifiant()) + ", " + CStr(paramNote) + ")"
         do_sql(strRequete, reader_Sql)
     End Sub
+
+    Public Function recupNote(paramRepas As Repas, paramMembre As Membre)
+        Dim strRequete As String
+        Dim reader_Sql As OracleDataReader
+        strRequete = "SELECT not_note FROM vw_onm_note WHERE not_rep_no = " + CStr(paramRepas.getIdentifiant()) + " AND not_mem_no = " + CStr(paramMembre.getIdentifiant())
+        do_sql(strRequete, reader_Sql)
+        If (reader_Sql.Read()) Then Return reader_Sql.Item(0) Else Return -1
+    End Function
 End Module

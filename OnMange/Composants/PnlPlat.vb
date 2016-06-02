@@ -58,19 +58,11 @@ Public Class PnlPlat
         aCentrer.Location = New Point(((Width - aCentrer.Width) / 2), aCentrer.Location.Y)
     End Sub
 
-    Private Sub lblPlat_MouseEnter(sender As Object, e As EventArgs) Handles lblPlat.MouseEnter
-        PnlPlat_MouseEnter(Me, e)
+    Private Sub lblPlat_MouseEnter(sender As Object, e As EventArgs) Handles lblPlat.MouseEnter, lblOrigine.MouseEnter, notPlat.MouseEnter
+        Me.OnMouseEnter(e)
     End Sub
 
-    Private Sub lblOrigine_MouseEnter(sender As Object, e As EventArgs) Handles lblOrigine.MouseEnter
-        PnlPlat_MouseEnter(Me, e)
-    End Sub
-
-    Private Sub notPlat_MouseEnter(sender As Object, e As EventArgs) Handles notPlat.MouseEnter
-        PnlPlat_MouseEnter(Me, e)
-    End Sub
-
-    Private Sub PnlPlat_MouseEnter(sender As Object, e As EventArgs) Handles MyBase.MouseEnter
-
+    Private Sub lblPlat_MouseClick(sender As Object, e As MouseEventArgs) Handles notPlat.MouseClick, lblPlat.MouseClick, lblOrigine.MouseClick
+        Me.OnMouseClick(e)
     End Sub
 End Class

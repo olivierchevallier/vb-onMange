@@ -30,10 +30,14 @@ Public Class FrmPrincipale
             PlaNoter.NomPlat = "Date invalide"
             PlaNoter.Origine = "Pas de repas enregistré à ce moment"
             PlaNoter.Note = 0
+            cmdEnregistrerNote.Enabled = False
+            notNotePerso.LectureSeule = True
         Else
             PlaNoter.Plat = repasCourant
+            notNotePerso.Note = If(recupNote(repasCourant, membreActif) < 0, 0, recupNote(repasCourant, membreActif))
+            notNotePerso.LectureSeule = recupNote(repasCourant, membreActif) >= 0
+            cmdEnregistrerNote.Enabled = recupNote(repasCourant, membreActif) < 0 And notNotePerso.Note > 0
         End If
-        cmdEnregistrerNote.Enabled = Not IsNothing(repasCourant)
     End Sub
 
     'Effectue toutes les opérations nécessaires au chargement de l'onglet ajouter
@@ -175,5 +179,11 @@ Public Class FrmPrincipale
 
     Private Sub cmdEnregistrerNote_Click(sender As Object, e As EventArgs) Handles cmdEnregistrerNote.Click
         enregistrerNote(repasCourant, membreActif, notNotePerso.Note)
+        cmdEnregistrerNote.Enabled = False
+        AfficherANoter()
+    End Sub
+
+    Private Sub notNotePerso_MouseClick(sender As Object, e As MouseEventArgs) Handles notNotePerso.MouseClick
+        cmdEnregistrerNote.Enabled = Not notNotePerso.LectureSeule And notNotePerso.Note > 0
     End Sub
 End Class

@@ -31,12 +31,14 @@
         If boolLectureSeule = False And intNote = 0 Then
             afficheNoteSouris(sender, stars, False)
         End If
+        Me.OnMouseEnter(e)
     End Sub
 
     Private Sub picEtoile1_MouseClick(sender As Object, e As MouseEventArgs) Handles picEtoile5.MouseClick, picEtoile4.MouseClick, picEtoile3.MouseClick, picEtoile2.MouseClick, picEtoile1.MouseClick
         If boolLectureSeule = False Then
             intNote = afficheNoteSouris(sender, stars, True)
         End If
+        Me.OnMouseClick(e)
     End Sub
 
     Private Sub Note_MouseLeave(sender As Object, e As EventArgs) Handles MyBase.MouseLeave
