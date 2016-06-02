@@ -31,6 +31,7 @@ Partial Class FrmPrincipale
         Me.lblPropositionJour = New System.Windows.Forms.Label()
         Me.lblMangerTitre = New System.Windows.Forms.Label()
         Me.tabAjouter = New System.Windows.Forms.TabPage()
+        Me.cmdSupAliments = New System.Windows.Forms.Button()
         Me.lblOu = New System.Windows.Forms.Label()
         Me.btnPlatExistant = New System.Windows.Forms.Button()
         Me.cmdEnregistrerAjouter = New System.Windows.Forms.Button()
@@ -65,7 +66,6 @@ Partial Class FrmPrincipale
         Me.mnuPrincipalStrip = New System.Windows.Forms.MenuStrip()
         Me.mnuAdministration = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuDeconnexion = New System.Windows.Forms.ToolStripMenuItem()
-        Me.cmdSupAliments = New System.Windows.Forms.Button()
         Me.tbcTabController.SuspendLayout()
         Me.tabManger.SuspendLayout()
         CType(Me.picManger, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -194,6 +194,16 @@ Partial Class FrmPrincipale
         Me.tabAjouter.TabIndex = 1
         Me.tabAjouter.Text = "Ajouter"
         Me.tabAjouter.UseVisualStyleBackColor = True
+        '
+        'cmdSupAliments
+        '
+        Me.cmdSupAliments.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.cmdSupAliments.Location = New System.Drawing.Point(443, 305)
+        Me.cmdSupAliments.Name = "cmdSupAliments"
+        Me.cmdSupAliments.Size = New System.Drawing.Size(31, 27)
+        Me.cmdSupAliments.TabIndex = 8
+        Me.cmdSupAliments.Text = "&-"
+        Me.cmdSupAliments.UseVisualStyleBackColor = True
         '
         'lblOu
         '
@@ -551,16 +561,6 @@ Partial Class FrmPrincipale
         Me.mnuDeconnexion.Name = "mnuDeconnexion"
         Me.mnuDeconnexion.Size = New System.Drawing.Size(88, 20)
         Me.mnuDeconnexion.Text = "&Déconnexion"
-        '
-        'cmdSupAliments
-        '
-        Me.cmdSupAliments.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.cmdSupAliments.Location = New System.Drawing.Point(443, 305)
-        Me.cmdSupAliments.Name = "cmdSupAliments"
-        Me.cmdSupAliments.Size = New System.Drawing.Size(31, 27)
-        Me.cmdSupAliments.TabIndex = 8
-        Me.cmdSupAliments.Text = "&-"
-        Me.cmdSupAliments.UseVisualStyleBackColor = True
         '
         'FrmPrincipale
         '

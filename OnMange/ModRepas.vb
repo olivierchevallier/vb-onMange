@@ -14,7 +14,7 @@ Module ModRepas
         Try
             do_sql(strRequete, reader_Sql)
             While (reader_Sql.Read)
-                repasCourant = New Repas(reader_Sql.Item(0), reader_Sql.Item(1), reader_Sql.Item(2), reader_Sql.Item(3), If(IsDBNull(reader_Sql.Item(4)), 0, reader_Sql.Item(4)))
+                repasCourant = New Repas(reader_Sql.Item(0), reader_Sql.Item(1), reader_Sql.Item(2), reader_Sql.Item(3), reader_Sql.Item(3), If(IsDBNull(reader_Sql.Item(5)), 0, reader_Sql.Item(5)))
             End While
         Catch e As Exception
             repasCourant = Nothing
@@ -35,6 +35,13 @@ Module ModRepas
         Dim strRequete As String
         Dim reader_Sql As OracleDataReader
         strRequete = "INSERT INTO vw_onm_repas VALUES(NULL, '" + paramMoment + "', to_date('" + paramDate.Date + "', 'DD/MM/YYYY'), " + CStr(getLastPlatId()) + ")"
+        do_sql(strRequete, reader_Sql)
+    End Sub
+
+    Public Sub enregistrerNote(paramRepas As Repas, paramMembre As Membre, paramNote As Integer)
+        Dim strRequete As String
+        Dim reader_Sql As OracleDataReader
+        strRequete = "INSERT INTO vw_onm_note VALUES(" + CStr(paramRepas.getIdentifiant()) + ", " + CStr(paramMembre.getIdentifiant()) + ", " + CStr(paramNote) + ")"
         do_sql(strRequete, reader_Sql)
     End Sub
 End Module

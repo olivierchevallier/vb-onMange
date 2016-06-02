@@ -13,6 +13,7 @@ Public Class FrmPrincipale
     'Variables globales
     Dim noteAjouter As Integer = 0
     Dim noteNoter As Integer = 0
+    Dim repasCourant As Repas
 
     'Affiche la proposition du jour
     Private Sub AfficherPropositionJour()
@@ -21,7 +22,7 @@ Public Class FrmPrincipale
 
     'Affiche le plat à noter
     Private Sub AfficherANoter()
-        Dim dateChoise As Date, moment As String, repasCourant As Repas
+        Dim dateChoise As Date, moment As String
         moment = If(optMidi.Checked, "m", "s")
         dateChoise = datNoterJour.Value
         repasCourant = recupUnRepas(dateChoise, moment)
@@ -170,5 +171,9 @@ Public Class FrmPrincipale
             listeAlimentsRepas.RemoveAt(listeAlimentsRepas.Count() - 1)
             afficherAlimentsAjouter()
         End If
+    End Sub
+
+    Private Sub cmdEnregistrerNote_Click(sender As Object, e As EventArgs) Handles cmdEnregistrerNote.Click
+        enregistrerNote(repasCourant, membreActif, notNotePerso.Note)
     End Sub
 End Class
