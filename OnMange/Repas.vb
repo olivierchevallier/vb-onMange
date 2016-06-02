@@ -8,7 +8,7 @@ Public Class Repas
 
     Private moment As String
 
-    Public Sub New(ByVal nomPlat As String, ByVal origine As String, ByVal mangeLe As Date, ByVal moment As String, ByVal noteMoyenne As Double)
+    Public Sub New(nomPlat As String, origine As String, mangeLe As Date, moment As String, noteMoyenne As Double)
         'identifiant bidon inséré (vérifier si ça ne pose pas de problème)
         MyBase.New(1, nomPlat, origine, mangeLe, noteMoyenne)
         Me.moment = moment

@@ -21,7 +21,7 @@ Module ModBDD
         connexion.Close()
     End Sub
 
-    Public Sub do_sql(ByVal paramSql As String, ByRef paramOdr As OracleDataReader)
+    Public Sub do_sql(paramSql As String, ByRef paramOdr As OracleDataReader)
         Dim cmd As New OracleCommand(paramSql, connexion)
         cmd.CommandText = paramSql
         paramOdr = cmd.ExecuteReader()

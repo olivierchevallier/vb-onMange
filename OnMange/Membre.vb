@@ -9,7 +9,7 @@ Public Class Membre
     Dim dateNaissance As Date
     Dim autorisation As String
 
-    Public Sub New(ByVal prenom As String, ByVal dateNaissance As Date, ByVal autorisation As String, ByVal identifiant As Integer)
+    Public Sub New(prenom As String, dateNaissance As Date, autorisation As String, identifiant As Integer)
         Me.prenom = prenom
         Me.dateNaissance = dateNaissance
         Me.autorisation = autorisation
@@ -20,7 +20,7 @@ Public Class Membre
         Return identifiant
     End Function
 
-    Public Sub setPrenom(ByVal prenom As String)
+    Public Sub setPrenom(prenom As String)
         Me.prenom = prenom
     End Sub
 
@@ -28,7 +28,7 @@ Public Class Membre
         Return dateNaissance
     End Function
 
-    Public Sub setDateNaissance(ByVal dateNaissance As Date)
+    Public Sub setDateNaissance(dateNaissance As Date)
         Me.dateNaissance = dateNaissance
     End Sub
 

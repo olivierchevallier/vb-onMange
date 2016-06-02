@@ -22,7 +22,7 @@ Module ModMembres
         End While
     End Sub
 
-    Public Sub updateMembre(ByVal paramMembre As Membre)
+    Public Sub updateMembre(paramMembre As Membre)
         'Fonctionne, mais changer la classe personne pour intégrer l'id et faire la comparaison sur celui-ci plutot que sur le prénom
         Dim strRequete As String
         Dim reader_Sql As OracleDataReader
@@ -30,14 +30,14 @@ Module ModMembres
         do_sql(strRequete, reader_Sql)
     End Sub
 
-    Public Sub AddMembre(ByVal paramMembre As Membre, ByVal paramNom As String)
+    Public Sub AddMembre(paramMembre As Membre, paramNom As String)
         Dim strRequete As String
         Dim reader_Sql As OracleDataReader
         strRequete = "INSERT INTO vw_onm_membre VALUES(NULL, '" + paramMembre.ToString() + "', '" + paramNom + "','" + paramMembre.getDateNaissance().Date + "', '" + paramMembre.getAutorisation() + "')"
         do_sql(strRequete, reader_Sql)
     End Sub
 
-    Public Sub DeleteMembre(ByVal paramMembre)
+    Public Sub DeleteMembre(paramMembre)
         Dim strRequete As String
         Dim reader_Sql As OracleDataReader
         strRequete = "DELETE FROM vw_onm_membre WHERE mem_no = " + CStr(paramMembre.getIdentifiant)

@@ -6,7 +6,7 @@
 Imports System.Data.OracleClient
 Module ModRepas
     'Récupère un repas en fonction de sa date et de son moment
-    Public Function recupUnRepas(ByVal paramDateRepas As Date, ByVal paramMomentRepas As String) As Plat
+    Public Function recupUnRepas(paramDateRepas As Date, paramMomentRepas As String) As Plat
         Dim strRequete As String
         Dim reader_Sql As OracleDataReader
         Dim repasCourant As Repas
