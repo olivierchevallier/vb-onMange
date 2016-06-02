@@ -141,7 +141,8 @@ Public Class FrmPrincipale
         Dim moment As String
         moment = If(optAjouterMidi.Checked, "m", "s")
         If IsNothing(platAjouter) Then
-
+            EnregistrerPlat(txtPlat.Text, cboAjouterOrigine.Text)
+            enregistrerRepas(moment, Date.Now)
         Else
             enregistrerRepas(moment, Date.Now, platAjouter)
         End If

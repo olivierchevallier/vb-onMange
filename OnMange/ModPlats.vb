@@ -27,7 +27,7 @@ Module ModPlats
         Return If(platsTrouves.Count > 0, platsTrouves(0), Nothing)
     End Function
 
-    Public Function RechercherPlats(ByVal paramOrigine As String, ByVal paramPasMange As Date) As List(Of Plat)
+    Public Function RechercherPlats(paramOrigine As String, paramPasMange As Date) As List(Of Plat)
         Dim strRequete As String, platsTrouves As List(Of Plat)
         Dim reader_Sql As OracleDataReader
         platsTrouves = New List(Of Plat)
@@ -40,9 +40,22 @@ Module ModPlats
         Return platsTrouves
     End Function
 
-    Public Sub EnregistrerPlat(ByVal paramPlat As Plat)
-
+    Public Sub EnregistrerPlat(paramNom As String, paramOrigine As String)
+        Dim strRequete As String, strSsRequete As String
+        Dim reader_Sql As OracleDataReader
+        strSsRequete = "SELECT ori_no FROM vw_onm_origine WHERE UPPER(ori_continent) LIKE UPPER('" + paramOrigine + "')"
+        strRequete = "INSERT INTO vw_onm_plat VALUES(NULL, '" + paramNom + "', (" + strSsRequete + "))"
+        do_sql(strRequete, reader_Sql)
     End Sub
+
+    Public Function getLastPlatId() As Integer
+        Dim strRequete As String, id As Integer
+        Dim reader_Sql As OracleDataReader
+        strRequete = "SELECT MAX(pla_no) FROM vw_onm_plat"
+        do_sql(strRequete, reader_Sql)
+        reader_Sql.Read()
+        Return reader_Sql.Item(0)
+    End Function
 
     Public Function PropositionDuJour() As Plat
         RecupPlats()
