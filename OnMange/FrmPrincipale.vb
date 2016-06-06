@@ -26,6 +26,7 @@ Public Class FrmPrincipale
             PlaNoter.Origine = "Pas de repas enregistré à ce moment"
             PlaNoter.Note = 0
             cmdEnregistrerNote.Enabled = False
+            notNotePerso.Note = 0
             notNotePerso.LectureSeule = True
         Else
             PlaNoter.Plat = repasCourant
